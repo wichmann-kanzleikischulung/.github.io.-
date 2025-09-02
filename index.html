@@ -14,7 +14,13 @@
   <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-9 h-9 rounded-2xl bg-neutral-900 text-white grid place-items-center font-semibold">KW</div>
+        <!-- KW-Logo (SVG) -->
+        <div class="w-9 h-9 rounded-2xl bg-white border grid place-items-center">
+          <svg viewBox="0 0 100 100" class="w-7 h-7">
+            <circle cx="50" cy="50" r="48" fill="#0a0a0a"/>
+            <text x="50" y="57" text-anchor="middle" font-family="ui-sans-serif,system-ui" font-weight="700" font-size="36" fill="#fff">KW</text>
+          </svg>
+        </div>
         <div>
           <p class="text-sm leading-tight text-neutral-500">Kathleen Wichmann</p>
           <h1 class="text-base font-semibold leading-tight">Büroservice & Kanzlei-Schulung</h1>
@@ -75,25 +81,25 @@
     </div>
   </section>
 
-  <!-- Leistungen (alternierende Bild/Text-Blöcke) -->
+  <!-- Leistungen (Zickzack mit Bildern) -->
   <section id="leistungen" class="bg-white border-y">
     <div class="container mx-auto px-4 py-16">
       <h3 class="text-2xl md:text-3xl font-bold">Leistungen</h3>
       <div class="mt-10 grid gap-10">
-        <!-- Block 1: Bild links, Text rechts -->
+        <!-- 1) KI-Startup-Paket: Bild links, Text rechts -->
         <div class="grid md:grid-cols-2 gap-6 items-center">
-          <img src="https://images.unsplash.com/photo-1516542076529-1ea3854896e1?q=80&w=1400&auto=format&fit=crop" alt="Workshop & Vorlagen" class="rounded-2xl h-64 w-full object-cover">
+          <img src="https://images.unsplash.com/photo-1518779578993-ec3579fee39f?q=80&w=1600&auto=format&fit=crop" alt="KI & Kodierung" class="rounded-2xl h-64 w-full object-cover">
           <div>
-            <h4 class="text-xl font-semibold">KI-Starterpaket</h4>
+            <h4 class="text-xl font-semibold">KI-Startup-Paket</h4>
             <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
-              <li>Team-Workshop (3–6 Std.) mit Praxisübungen</li>
-              <li>Vorlagen: Prompts, Checklisten, Textbausteine</li>
-              <li>Redaktions- & Vier-Augen-Prozess mit KI</li>
-              <li>Dokumentenschutz & Vertraulichkeit – Do’s & Don’ts</li>
+              <li>Grundlagen & Best Practices (rechtssicher, mandatsbewusst)</li>
+              <li>Gesetzesbezug & Do’s/Don’ts bei der Anwendung</li>
+              <li>Vorlagen & Workflows für Schriftsatz/Kommunikation</li>
+              <li>Einrichtung & erste sichere Nutzung im Alltag</li>
             </ul>
           </div>
         </div>
-        <!-- Block 2: Text links, Bild rechts -->
+        <!-- 2) Sekretariatsservice: Text links, Bild rechts -->
         <div class="grid md:grid-cols-2 gap-6 items-center">
           <div>
             <h4 class="text-xl font-semibold">Sekretariatsservice</h4>
@@ -104,11 +110,11 @@
               <li>Vertretung bei Unterbesetzung (nach Absprache)</li>
             </ul>
           </div>
-          <img src="https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?q=80&w=1400&auto=format&fit=crop" alt="Sekretariat & Organisation" class="rounded-2xl h-64 w-full object-cover">
+          <img src="https://images.unsplash.com/photo-1506784983877-45594efa4cbe?q=80&w=1600&auto=format&fit=crop" alt="Sekretariat, Kalender & Dokumente" class="rounded-2xl h-64 w-full object-cover">
         </div>
-        <!-- Block 3: Bild links, Text rechts -->
+        <!-- 3) Rechnungslegung & RVG-Support: Bild links, Text rechts -->
         <div class="grid md:grid-cols-2 gap-6 items-center">
-          <img src="https://images.unsplash.com/photo-1518085250887-2f903c200fee?q=80&w=1400&auto=format&fit=crop" alt="Abrechnung & Transparenz" class="rounded-2xl h-64 w-full object-cover">
+          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop" alt="Rechnungen & Belege" class="rounded-2xl h-64 w-full object-cover">
           <div>
             <h4 class="text-xl font-semibold">Rechnungslegung & RVG-Support</h4>
             <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
@@ -123,13 +129,13 @@
     </div>
   </section>
 
-  <!-- Schulungen (Inhalte & Formate, mit Bildern, Online-first) -->
+  <!-- Schulungen (Inhalte & Formate, mit KI-Bildern, Online-first) -->
   <section id="schulungen" class="bg-neutral-50">
     <div class="container mx-auto px-4 py-16">
       <h3 class="text-2xl md:text-3xl font-bold">KI-Schulungen – Inhalte & Formate</h3>
 
       <div class="mt-10 grid gap-10">
-        <!-- Inhalte: Text links, Bild rechts -->
+        <!-- Inhalte: Text links, Bild rechts (KI) -->
         <div class="grid md:grid-cols-2 gap-6 items-center">
           <div>
             <h4 class="text-xl font-semibold">Inhalte</h4>
@@ -140,18 +146,18 @@
               <li>Qualitätssicherung & Dokumentation</li>
             </ul>
           </div>
-          <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1400&auto=format&fit=crop" alt="KI Inhalte" class="rounded-2xl h-64 w-full object-cover">
+          <img src="https://images.unsplash.com/photo-1534759846116-57968a6b17b6?q=80&w=1600&auto=format&fit=crop" alt="KI Inhalte" class="rounded-2xl h-64 w-full object-cover">
         </div>
 
-        <!-- Formate: Bild links, Text rechts -->
+        <!-- Formate: Bild links (Online-Training), Text rechts -->
         <div class="grid md:grid-cols-2 gap-6 items-center">
-          <img src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?q=80&w=1400&auto=format&fit=crop" alt="Formate" class="rounded-2xl h-64 w-full object-cover">
+          <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?q=80&w=1600&auto=format&fit=crop" alt="Live-Online Training" class="rounded-2xl h-64 w-full object-cover">
           <div>
             <h4 class="text-xl font-semibold">Formate</h4>
             <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
               <li><strong>Live-Online via gängigen Tools</strong> (Standard)</li>
               <li><strong>Einzelschulung</strong> oder <strong>kleine Teams</strong></li>
-              <li><strong>Follow-up-Sprechstunde (Q&A)</strong> zur Vertiefung</li>
+              <li><strong>Follow-up-Sprechstunde (Q&amp;A)</strong> zur Vertiefung</li>
               <li><strong>Vor Ort nur in Ausnahmefällen (Berlin)</strong> nach Absprache</li>
             </ul>
           </div>
@@ -170,6 +176,7 @@
         </p>
       </div>
       <div class="rounded-2xl shadow-sm bg-white">
+        <img src="https://images.unsplash.com/photo-1554151228-14d9def656e4?q=80&w=800&auto=format&fit=crop" alt="Arbeitsplatz" class="w-full h-40 object-cover rounded-t-2xl">
         <div class="p-5">
           <h4 class="font-semibold">Quick Facts</h4>
           <ul class="mt-3 text-sm text-neutral-700 grid gap-2">
