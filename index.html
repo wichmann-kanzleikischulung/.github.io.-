@@ -193,24 +193,68 @@
     <div class="container mx-auto px-4 py-16">
       <h3 class="text-2xl md:text-3xl font-bold">Kontakt</h3>
       <div class="mt-6 grid md:grid-cols-3 gap-8">
-        <div class="md:col-span-2 rounded-2xl border bg-white p-6">
-          <!-- modify this form HTML and place wherever you want your form -->
-          <form
-            action="https://formspree.io/f/xnnbzgwl"
-            method="POST"
-          >
-            <label>
-              Your email:
-              <input type="email" name="email">
+        <div class="md:col-span-2 rounded-2xl border bg-white">
+          <!-- Großes deutsches Formular (Formspree) -->
+          <form action="https://formspree.io/f/xnnbzgwl"
+                method="POST"
+                accept-charset="UTF-8"
+                class="p-6 grid gap-4">
+            <!-- Honeypot gegen Bots -->
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
+
+            <div class="grid md:grid-cols-2 gap-4">
+              <label class="grid gap-1 text-sm">
+                <span>Ihr Name</span>
+                <input class="border rounded-xl px-3 py-2"
+                       name="name"
+                       placeholder="Vor- und Nachname"
+                       required>
+              </label>
+
+              <label class="grid gap-1 text-sm">
+                <span>Ihre E-Mail</span>
+                <input class="border rounded-xl px-3 py-2"
+                       type="email"
+                       name="email"
+                       placeholder="name@beispiel.de"
+                       required>
+              </label>
+            </div>
+
+            <label class="grid gap-1 text-sm">
+              <span>Betreff</span>
+              <input class="border rounded-xl px-3 py-2"
+                     name="subject"
+                     placeholder="z. B. ‚Schulung‘ oder ‚Sekretariatsservice‘">
             </label>
-            <label>
-              Your message:
-              <textarea name="message"></textarea>
+
+            <label class="grid gap-1 text-sm">
+              <span>Nachricht</span>
+              <textarea class="border rounded-xl px-3 py-2"
+                        rows="6"
+                        name="message"
+                        placeholder="Worum geht es? Umfang, gewünschte Zeiten, Besonderheiten…"
+                        required></textarea>
             </label>
-            <!-- your other form fields go here -->
-            <button type="submit">Send</button>
+
+            <!-- Meta-Felder -->
+            <input type="hidden" name="_subject"  value="Neue Anfrage über Website – Kathleen Wichmann">
+            <input type="hidden" name="_redirect" value="danke.html">
+            <input type="hidden" name="_language" value="de">
+
+            <div class="flex items-center justify-between">
+              <div class="text-xs text-neutral-500">
+                Mit dem Absenden werden Ihre Angaben zur Beantwortung der Anfrage verarbeitet.
+                <a class="underline" href="#datenschutz">Datenschutzhinweise</a>.
+              </div>
+              <button type="submit"
+                      class="inline-flex items-center rounded-2xl bg-neutral-900 text-white px-4 py-2">
+                Nachricht senden
+              </button>
+            </div>
           </form>
         </div>
+
         <div class="grid gap-4">
           <div class="rounded-2xl border bg-white">
             <div class="p-6 text-sm text-neutral-700">
