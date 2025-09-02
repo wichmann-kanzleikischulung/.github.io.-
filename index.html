@@ -14,7 +14,7 @@
   <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b">
     <div class="container mx-auto px-4 py-3 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <!-- KW-Logo (SVG, neutral) -->
+        <!-- KW-Logo (SVG) -->
         <div class="w-9 h-9 rounded-2xl bg-white border grid place-items-center">
           <svg viewBox="0 0 100 100" class="w-7 h-7" aria-label="KW Logo">
             <circle cx="50" cy="50" r="48" fill="#0a0a0a"/>
@@ -81,7 +81,7 @@
     </div>
   </section>
 
-  <!-- Leistungen (Zickzack + passende Bilder) -->
+  <!-- Leistungen (Zickzack mit passenden Bildern) -->
   <section id="leistungen" class="bg-white border-y">
     <div class="container mx-auto px-4 py-16">
       <h3 class="text-2xl md:text-3xl font-bold">Leistungen</h3>
@@ -129,14 +129,14 @@
     </div>
   </section>
 
-  <!-- Schulungen (kompakte Bilder, zentriert) -->
+  <!-- Schulungen (Inhalte & Formate, KI-Bilder, Online-first) -->
   <section id="schulungen" class="bg-neutral-50">
     <div class="container mx-auto px-4 py-16">
       <h3 class="text-2xl md:text-3xl font-bold">KI-Schulungen – Inhalte & Formate</h3>
 
       <div class="mt-10 grid gap-10">
-        <!-- Inhalte: Text links, kleiners Bild rechts -->
-        <div class="grid md:grid-cols-2 gap-6 items-start">
+        <!-- Inhalte: Text links, Bild rechts (KI) -->
+        <div class="grid md:grid-cols-2 gap-6 items-center">
           <div>
             <h4 class="text-xl font-semibold">Inhalte</h4>
             <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
@@ -146,20 +146,12 @@
               <li>Qualitätssicherung & Dokumentation</li>
             </ul>
           </div>
-          <div class="flex justify-center">
-            <img src="https://images.unsplash.com/photo-1534759846116-57968a6b17b6?q=80&w=1000&auto=format&fit=crop"
-                 alt="KI-Wissen und Dokumentation"
-                 class="rounded-xl h-48 w-auto object-cover shadow">
-          </div>
+          <img src="https://images.unsplash.com/photo-1534759846116-57968a6b17b6?q=80&w=1600&auto=format&fit=crop" alt="KI-Wissen und Dokumentation" class="rounded-2xl h-64 w-full object-cover">
         </div>
 
-        <!-- Formate: kompaktes Bild links, Text rechts -->
-        <div class="grid md:grid-cols-2 gap-6 items-start">
-          <div class="flex justify-center">
-            <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?q=80&w=1000&auto=format&fit=crop"
-                 alt="Live-Online Schulung"
-                 class="rounded-xl h-48 w-auto object-cover shadow">
-          </div>
+        <!-- Formate: Bild links (Online-Training), Text rechts -->
+        <div class="grid md:grid-cols-2 gap-6 items-center">
+          <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?q=80&w=1600&auto=format&fit=crop" alt="Live-Online Schulung" class="rounded-2xl h-64 w-full object-cover">
           <div>
             <h4 class="text-xl font-semibold">Formate</h4>
             <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
@@ -201,25 +193,22 @@
     <div class="container mx-auto px-4 py-16">
       <h3 class="text-2xl md:text-3xl font-bold">Kontakt</h3>
       <div class="mt-6 grid md:grid-cols-3 gap-8">
-        <div class="md:col-span-2 rounded-2xl border bg-white">
-          <form action="https://formspree.io/f/xnnbzgwl" method="POST" class="p-6 grid gap-4">
-            <input type="text" name="_gotcha" style="display:none">
-            <div class="grid md:grid-cols-2 gap-4">
-              <input class="border rounded-xl px-3 py-2" name="name" placeholder="Ihr Name" required>
-              <input class="border rounded-xl px-3 py-2" type="email" name="email" placeholder="Ihre E-Mail" required>
-            </div>
-            <input class="border rounded-xl px-3 py-2" name="subject" placeholder="Betreff (z. B. ‚Schulung‘ oder ‚Sekretariatsservice‘)">
-            <textarea class="border rounded-xl px-3 py-2" rows="6" name="message" placeholder="Worum geht es? Umfang, gewünschte Zeiten, Besonderheiten…" required></textarea>
-            <input type="hidden" name="_subject" value="Neue Anfrage über Website – Kathleen Wichmann">
-            <input type="hidden" name="_redirect" value="danke.html">
-            <div class="flex items-center justify-between">
-              <div class="text-xs text-neutral-500">
-                Mit dem Absenden werden Ihre Angaben zur Beantwortung der Anfrage verarbeitet. <a class="underline" href="#datenschutz">Datenschutzhinweise</a>.
-              </div>
-              <button type="submit" class="inline-flex items-center rounded-2xl bg-neutral-900 text-white px-4 py-2">
-                Nachricht senden
-              </button>
-            </div>
+        <div class="md:col-span-2 rounded-2xl border bg-white p-6">
+          <!-- modify this form HTML and place wherever you want your form -->
+          <form
+            action="https://formspree.io/f/xnnbzgwl"
+            method="POST"
+          >
+            <label>
+              Your email:
+              <input type="email" name="email">
+            </label>
+            <label>
+              Your message:
+              <textarea name="message"></textarea>
+            </label>
+            <!-- your other form fields go here -->
+            <button type="submit">Send</button>
           </form>
         </div>
         <div class="grid gap-4">
