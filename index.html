@@ -1,260 +1,705 @@
 <!doctype html>
 <html lang="de">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Kathleen Wichmann – Büroservice & Kanzlei-Schulung</title>
-  <meta name="description" content="Effiziente Prozesse für Kanzleien & Unternehmen – mit Training, Tools & tatkräftiger Unterstützung">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>.container{max-width:1200px}</style>
-</head>
-<body class="bg-neutral-50 text-neutral-900">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Büroservice & Kanzlei-Schulung – Effiziente Prozesse mit KI</title>
+  <meta name="description" content="Effiziente Prozesse für Kanzleien & Unternehmen: KI-Workflows, Dokumentenstruktur, Qualitätssicherung und praktische Unterstützung – remote und praxisnah." />
 
-  <!-- Header -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-white/80 border-b">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <div class="flex items-center gap-3">
-        <!-- Logo -->
-        <img src="logo.jpg" alt="Logo KW" class="w-10 h-10 rounded-full border">
-        <div>
-          <p class="text-sm leading-tight text-neutral-500">Kathleen Wichmann</p>
-          <h1 class="text-base font-semibold leading-tight">Büroservice & Kanzlei-Schulung</h1>
+  <style>
+    :root{
+      --bg: #ffffff;
+      --text: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --card: #f9fafb;
+      --accent2: #0f172a;
+      --shadow: 0 10px 30px rgba(15, 23, 42, .08);
+      --radius: 16px;
+      --radius2: 12px;
+      --max: 1120px;
+    }
+    *{ box-sizing: border-box; }
+    html,body{ height: 100%; }
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.5;
+    }
+    a{ color: inherit; text-decoration: none; }
+    a:hover{ text-decoration: underline; }
+    .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
+    .stack{ display:flex; flex-direction: column; gap: 18px; }
+
+    header{
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(255,255,255,.9);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav{
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      padding: 14px 0;
+      gap: 16px;
+    }
+    .brand{ display:flex; flex-direction: column; gap: 2px; }
+    .brand strong{ font-size: 15px; letter-spacing: .2px; }
+    .brand span{ font-size: 13px; color: var(--muted); }
+
+    nav ul{
+      list-style:none; margin:0; padding:0;
+      display:flex; gap: 18px; align-items:center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    nav a{
+      font-size: 14px;
+      color: var(--text);
+      opacity: .9;
+      padding: 8px 10px;
+      border-radius: 10px;
+    }
+    nav a:hover{ background: #f3f4f6; text-decoration:none; }
+
+    .nav-cta{ display:flex; gap: 10px; align-items:center; }
+
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center;
+      padding: 11px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      background: #fff;
+      font-weight: 600;
+      font-size: 14px;
+      cursor:pointer;
+      transition: transform .05s ease, background .15s ease, border-color .15s ease;
+      white-space: nowrap;
+    }
+    .btn:hover{ background:#f9fafb; text-decoration:none; }
+    .btn:active{ transform: translateY(1px); }
+    .btn.primary{
+      background: var(--accent2);
+      color: #fff;
+      border-color: var(--accent2);
+    }
+    .btn.primary:hover{ background: #0b1222; }
+    .btn.ghost{ background: transparent; }
+    .btn.small{ padding: 9px 12px; border-radius: 10px; font-size: 13px; }
+
+    .hero{
+      padding: 44px 0 28px;
+      border-bottom: 1px solid var(--line);
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1.35fr .9fr;
+      gap: 24px;
+      align-items: start;
+    }
+    .kicker{
+      display:inline-flex;
+      gap: 8px;
+      align-items:center;
+      font-size: 13px;
+      color: var(--muted);
+      padding: 6px 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #fff;
+      width: fit-content;
+    }
+    h1{
+      margin: 10px 0 10px;
+      font-size: clamp(28px, 4vw, 44px);
+      line-height: 1.12;
+      letter-spacing: -0.5px;
+    }
+    .lead{
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      max-width: 62ch;
+    }
+    .hero-actions{
+      margin-top: 18px;
+      display:flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items:center;
+    }
+    .hero-bullets{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+    .bullet{ display:flex; gap: 10px; align-items:flex-start; }
+    .dot{
+      width: 8px; height: 8px; border-radius: 999px;
+      background: var(--accent2);
+      margin-top: 7px;
+      flex: none;
+    }
+    .hero-card{
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .hero-card h3{ margin: 0 0 10px; font-size: 16px; letter-spacing: .2px; }
+    .hero-card ul{ margin: 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+    .hero-card li{ margin: 8px 0; }
+
+    section{ padding: 34px 0; }
+    .section-title{
+      display:flex; align-items:flex-end; justify-content: space-between;
+      gap: 16px; flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .section-title h2{ margin: 0; font-size: 22px; letter-spacing: -0.2px; }
+    .section-title p{ margin: 0; color: var(--muted); font-size: 14px; max-width: 70ch; }
+
+    .cards{
+      display:grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 14px;
+    }
+    .card{
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 16px;
+      transition: box-shadow .15s ease, transform .05s ease;
+    }
+    .card:hover{ box-shadow: var(--shadow); text-decoration:none; }
+    .card:active{ transform: translateY(1px); }
+    .card h3{ margin:0 0 6px; font-size: 16px; }
+    .card p{ margin:0; color: var(--muted); font-size: 14px; }
+    .tagrow{ margin-top: 10px; display:flex; flex-wrap: wrap; gap: 8px; }
+    .tag{
+      font-size: 12px;
+      color: var(--muted);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 5px 9px;
+      background: #fff;
+    }
+
+    .accordion{
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      overflow: hidden;
+      background: #fff;
+    }
+    .acc-item + .acc-item{ border-top: 1px solid var(--line); }
+    .acc-btn{
+      width: 100%;
+      text-align: left;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 14px;
+      padding: 16px 16px;
+      background: #fff;
+      border: 0;
+      cursor:pointer;
+      font-weight: 700;
+      font-size: 15px;
+    }
+    .acc-btn:hover{ background: #f9fafb; }
+    .acc-meta{ font-weight: 600; color: var(--muted); font-size: 13px; margin-left: 8px; }
+    .chev{
+      width: 22px; height: 22px; flex: none;
+      border-radius: 10px;
+      display:grid; place-items:center;
+      border: 1px solid var(--line);
+      background: #fff;
+      transition: transform .15s ease;
+    }
+    .acc-item[aria-expanded="true"] .chev{ transform: rotate(180deg); }
+    .acc-panel{ padding: 0 16px 16px; color: var(--muted); font-size: 14px; display: none; }
+    .acc-item[aria-expanded="true"] .acc-panel{ display: block; }
+    .acc-panel .cols{
+      display:grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 14px;
+      margin-top: 10px;
+    }
+    .acc-panel .box{
+      border: 1px solid var(--line);
+      border-radius: var(--radius2);
+      padding: 12px;
+      background: #fff;
+    }
+    .acc-panel .box strong{
+      display:block;
+      color: var(--text);
+      margin-bottom: 6px;
+      font-size: 13px;
+      letter-spacing: .2px;
+    }
+    .acc-panel ul{ margin:0; padding-left: 18px; }
+    .acc-panel li{ margin: 6px 0; }
+
+    .band{
+      background: #0b1222;
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 18px;
+      display:flex;
+      align-items:center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .band p{ margin: 0; opacity: .9; }
+    .band .btn{ border-color: rgba(255,255,255,.22); }
+    .band .btn.primary{ background: #fff; color: #0b1222; border-color: #fff; }
+    .band .btn.primary:hover{ background: #f3f4f6; }
+
+    footer{
+      border-top: 1px solid var(--line);
+      padding: 22px 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+    .footer-grid{
+      display:flex;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .footer-links{ display:flex; gap: 14px; flex-wrap: wrap; }
+
+    @media (max-width: 920px){
+      .hero-grid{ grid-template-columns: 1fr; }
+      .hero-bullets{ grid-template-columns: 1fr; }
+      .cards{ grid-template-columns: 1fr; }
+      .acc-panel .cols{ grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="container">
+      <div class="nav">
+        <a class="brand" href="#top" aria-label="Startseite">
+          <strong>Büroservice & Kanzlei-Schulung</strong>
+          <span>Effiziente Prozesse • KI-gestützt • praxisnah</span>
+        </a>
+
+        <nav aria-label="Hauptnavigation">
+          <ul>
+            <li><a href="#leistungen">Leistungen</a></li>
+            <li><a href="#fuer-kanzleien">Für Kanzleien</a></li>
+            <li><a href="#fuer-unternehmen">Für Unternehmen</a></li>
+            <li><a href="#arbeitsweise">Arbeitsweise</a></li>
+            <li><a href="#ueber-mich">Über mich</a></li>
+            <li><a href="#kontakt">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-cta">
+          <a class="btn small ghost" href="#kontakt">Unverbindlich anfragen</a>
         </div>
-      </div>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#leistungen" class="hover:underline">Leistungen</a>
-        <a href="#schulungen" class="hover:underline">KI-Schulungen</a>
-        <a href="#ueber" class="hover:underline">Über mich</a>
-        <a href="#kontakt" class="hover:underline">Kontakt</a>
-        <a href="#impressum" class="hover:underline">Impressum</a>
-        <a href="#datenschutz" class="hover:underline">Datenschutz</a>
-      </nav>
-      <div class="hidden md:block">
-        <a href="#kontakt" class="inline-flex items-center rounded-2xl bg-neutral-900 text-white px-4 py-2">Unverbindlich anfragen</a>
       </div>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative">
-    <div class="absolute inset-0 -z-10">
-      <img src="https://images.unsplash.com/photo-1523246198772-6c120d9252ae?q=80&w=2000&auto=format&fit=crop" 
-           class="w-full h-full object-cover opacity-20">
-    </div>
-    <div class="container mx-auto px-4 py-14 md:py-24 grid md:grid-cols-2 gap-10 items-center">
-      <div>
-        <h2 class="mt-5 text-3xl md:text-5xl font-extrabold tracking-tight">
-          Effiziente Prozesse für Kanzleien & Unternehmen –<br class="hidden md:block"> mit Training, Tools & tatkräftiger Unterstützung
-        </h2>
-        <p class="mt-4 text-neutral-700 text-base md:text-lg">
-          Ich helfe Kanzleien und Unternehmen, KI alltagstauglich zu machen: von sicheren Workflows über praxistaugliche Schulungen bis zur operativen Entlastung im Büro – inklusive professioneller Rechnungslegung und Dokumentenvorbereitung.
-        </p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#kontakt" class="inline-flex items-center rounded-2xl bg-neutral-900 text-white px-4 py-2">Termin anfragen</a>
-          <a href="#leistungen" class="inline-flex items-center rounded-2xl border px-4 py-2">Leistungen ansehen</a>
-        </div>
-        <ul class="mt-6 text-sm text-neutral-700 grid md:grid-cols-2 gap-2">
-          <li>✔ Online-first, praxisnah & datenschutzbewusst</li>
-          <li>✔ Tradition bewahren – Workflows vereinfachen</li>
-          <li>✔ Qualität sichern – KI dort, wo sie nützt</li>
-          <li>✔ Klarheit statt Theorie-Overload</li>
-        </ul>
-      </div>
-      <div class="grid gap-4">
-        <div class="rounded-2xl shadow-sm overflow-hidden bg-white">
-          <img src="https://images.unsplash.com/photo-1551836022-4c4c79ecde51?q=80&w=1200&auto=format&fit=crop" 
-               alt="Schreibtisch mit Notizen und Laptop" 
-               class="w-full h-56 object-cover">
-          <div class="p-5">
-            <h3 class="text-lg font-semibold">Kurzüberblick</h3>
-            <ul class="mt-3 text-sm text-neutral-700 grid gap-2 list-disc ml-5">
-              <li>KI-Einführung: sichere Prompt-Praxis, Vorlagen, Redaktions- & Prüfprozesse</li>
-              <li>Sekretariatsservice: Fristen, Posteingang, Terminierung, Kommunikation</li>
-              <li>Rechnungslegung & RVG-Support</li>
-              <li>Qualitätssicherung & Automatisierung mit Augenmaß</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Leistungen -->
-  <section id="leistungen" class="bg-white border-y">
-    <div class="container mx-auto px-4 py-16">
-      <h3 class="text-2xl md:text-3xl font-bold">Leistungen</h3>
-      <div class="mt-10 grid gap-10">
-        <!-- KI-Startup-Paket -->
-        <div class="grid md:grid-cols-2 gap-6 items-center">
-          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1600&auto=format&fit=crop" 
-               alt="Abstrakte Codierung für KI-Setup" 
-               class="rounded-2xl h-64 w-full object-cover">
+  <main id="top">
+    <section class="hero">
+      <div class="container">
+        <div class="hero-grid">
           <div>
-            <h4 class="text-xl font-semibold">KI-Startup-Paket</h4>
-            <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
-              <li>Grundlagen & Best Practices (rechtssicher, mandatsbewusst)</li>
-              <li>Gesetzesbezug & Do’s/Don’ts bei der Anwendung</li>
-              <li>Vorlagen & Workflows für Schriftsatz/Kommunikation</li>
-              <li>Einrichtung & erste sichere Nutzung im Alltag</li>
+            <div class="kicker" aria-label="Kurzinfo">
+              <span>Remote</span> • <span>klar strukturiert</span> • <span>mit Verantwortung</span>
+            </div>
+
+            <h1>Effiziente Prozesse für Kanzleien & Unternehmen – mit KI, Tools & tatkräftiger Unterstützung</h1>
+
+            <p class="lead">
+              Ich unterstütze beim Aufbau sicherer Workflows, der Strukturierung von Dokumenten und der Qualitätssicherung von KI-Ergebnissen.
+              Ziel: spürbare Entlastung im Alltag – ohne Theorie-Overload.
+            </p>
+
+            <div class="hero-actions">
+              <a class="btn primary" href="#kontakt">Termin anfragen</a>
+              <a class="btn" href="#leistungen">Leistungen ansehen</a>
+              <a class="btn" href="#arbeitsweise">So arbeite ich</a>
+            </div>
+
+            <div class="hero-bullets" aria-label="Vorteile">
+              <div class="bullet"><span class="dot"></span><span>Praxisnah & nachvollziehbar dokumentiert</span></div>
+              <div class="bullet"><span class="dot"></span><span>Qualität vor Geschwindigkeit – keine halbgaren Lösungen</span></div>
+              <div class="bullet"><span class="dot"></span><span>Klare Abgrenzung: organisatorisch, keine Rechtsberatung</span></div>
+              <div class="bullet"><span class="dot"></span><span>Schlanke Zusammenarbeit – remote oder hybrid nach Absprache</span></div>
+            </div>
+          </div>
+
+          <aside class="hero-card" aria-label="Kurzüberblick">
+            <h3>Kurzüberblick</h3>
+            <ul>
+              <li><strong>KI-Einführung:</strong> Prompts, Vorlagen, Headnotes & Prozessregeln</li>
+              <li><strong>Dokumentenarbeit:</strong> Struktur, Fristen, Aufbereitung, Ablage</li>
+              <li><strong>Qualitätssicherung:</strong> Human-in-the-Loop statt Blindflug</li>
+              <li><strong>Backoffice:</strong> Unterstützung & Entlastung nach Absprache</li>
             </ul>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Wählen Sie den passenden Einstieg</h2>
+          <p>Damit Sie nicht suchen müssen: gleicher Anspruch, aber zielgruppengerechte Sprache und Beispiele.</p>
+        </div>
+
+        <div class="cards">
+          <a id="fuer-kanzleien" class="card" href="#kontakt" data-prefill="kanzlei">
+            <h3>Für Kanzleien</h3>
+            <p>Workflows, Schriftsatz- und Kommunikationsprozesse, sichere KI-Nutzung, Qualitätssicherung – sauber und praxistauglich.</p>
+            <div class="tagrow">
+              <span class="tag">Fristen & Wiedervorlage</span>
+              <span class="tag">Vorlagen</span>
+              <span class="tag">Qualitätscheck</span>
+              <span class="tag">KI-Regeln</span>
+            </div>
+          </a>
+
+          <a id="fuer-unternehmen" class="card" href="#kontakt" data-prefill="unternehmen">
+            <h3>Für Unternehmen</h3>
+            <p>Backoffice-Entlastung, Dokumentenstruktur, Automatisierung wiederkehrender Aufgaben und klare Standards für KI im Alltag.</p>
+            <div class="tagrow">
+              <span class="tag">Backoffice</span>
+              <span class="tag">Dokumente</span>
+              <span class="tag">Automatisierung</span>
+              <span class="tag">Enablement</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-title">
+          <h2>Leistungen</h2>
+          <p>Klick auf die Unterkategorie – der jeweilige Text klappt darunter auf. Modular buchbar, einzeln oder kombiniert.</p>
+        </div>
+
+        <div class="accordion" role="region" aria-label="Leistungsübersicht">
+          <div class="acc-item" aria-expanded="true">
+            <button class="acc-btn" type="button">
+              <span>KI & Workflow-Optimierung <span class="acc-meta">Einführung & sichere Nutzung</span></span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                Strukturierte Einführung von KI in bestehende Abläufe – mit klaren Regeln, praxistauglichen Vorlagen und verständlicher Dokumentation.
+              </p>
+              <div class="cols">
+                <div class="box">
+                  <strong>Typische Aufgaben</strong>
+                  <ul>
+                    <li>Prompt- und Vorlagen-Setups für wiederkehrende Texte</li>
+                    <li>Prozessregeln („Do/Don’t“) & sichere Nutzung im Alltag</li>
+                    <li>Einführung einfacher Workflows (z. B. E-Mail → Entwurf)</li>
+                  </ul>
+                </div>
+                <div class="box">
+                  <strong>Ergebnis</strong>
+                  <ul>
+                    <li>funktionierender Ablauf</li>
+                    <li>Dokumentation & Übergabe</li>
+                    <li>optional: Nachbetreuung</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item" aria-expanded="false">
+            <button class="acc-btn" type="button">
+              <span>Dokumenten- & Prozessstruktur <span class="acc-meta">Ordnung, Ablage, Klarheit</span></span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                Ordnung in Dokumenten und Abläufen: klare Strukturen, nachvollziehbare Standards, weniger Reibungsverluste im Alltag.
+              </p>
+              <div class="cols">
+                <div class="box">
+                  <strong>Typische Aufgaben</strong>
+                  <ul>
+                    <li>Strukturierte Ablage- und Benennungslogik</li>
+                    <li>Checklisten & Standards für wiederkehrende Vorgänge</li>
+                    <li>Aufbereitung von Dokumentenpaketen</li>
+                  </ul>
+                </div>
+                <div class="box">
+                  <strong>Geeignet für</strong>
+                  <ul>
+                    <li>Teams mit hohem Dokumentenaufkommen</li>
+                    <li>Backoffice/Verwaltung</li>
+                    <li>Kanzleien mit Standardprozessen</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item" aria-expanded="false">
+            <button class="acc-btn" type="button">
+              <span>Qualitätssicherung & Human-in-the-Loop <span class="acc-meta">Prüfen statt Blindflug</span></span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                Prüfung und Absicherung von KI-Ergebnissen: Logik, Struktur, Vollständigkeit – damit Inhalte verantwortbar bleiben.
+              </p>
+              <div class="cols">
+                <div class="box">
+                  <strong>Typische Aufgaben</strong>
+                  <ul>
+                    <li>Prüfung von KI-Texten</li>
+                    <li>Qualitätsstandards & Freigabeprozesse</li>
+                    <li>Feedbackschleifen zur Verbesserung</li>
+                  </ul>
+                </div>
+                <div class="box">
+                  <strong>Mehrwert</strong>
+                  <ul>
+                    <li>weniger Fehler</li>
+                    <li>weniger Risiko</li>
+                    <li>mehr Verlässlichkeit</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item" aria-expanded="false">
+            <button class="acc-btn" type="button">
+              <span>Backoffice-Unterstützung <span class="acc-meta">Entlastung nach Absprache</span></span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                Operative Unterstützung bei wiederkehrenden Aufgaben. Klar abgegrenzt: organisatorisch, keine Rechtsberatung und keine Außenvertretung.
+              </p>
+              <div class="cols">
+                <div class="box">
+                  <strong>Beispiele</strong>
+                  <ul>
+                    <li>Dokumentenpakete vorbereiten</li>
+                    <li>Vorlagenpflege, Standardtexte, Ablage</li>
+                    <li>Abrechnungsvorbereitung</li>
+                  </ul>
+                </div>
+                <div class="box">
+                  <strong>Rahmen</strong>
+                  <ul>
+                    <li>projektbasiert oder Paket</li>
+                    <li>remote (Standard)</li>
+                    <li>Vertraulichkeit & klare Prozesse</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="acc-item" aria-expanded="false">
+            <button class="acc-btn" type="button">
+              <span>Schulungen & Enablement <span class="acc-meta">praxisnah, ohne Überforderung</span></span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                Kurze, praxistaugliche Schulungen zur sicheren Nutzung von KI und Tools – direkt am Arbeitsalltag orientiert.
+              </p>
+              <div class="cols">
+                <div class="box">
+                  <strong>Formate</strong>
+                  <ul>
+                    <li>Einzelperson oder kleines Team</li>
+                    <li>Online (Standard)</li>
+                    <li>Follow-up / Sprechstunde möglich</li>
+                  </ul>
+                </div>
+                <div class="box">
+                  <strong>Inhalte</strong>
+                  <ul>
+                    <li>Prompts, Vorlagen, Standards</li>
+                    <li>Datenschutz & sichere Nutzung</li>
+                    <li>Qualitätssicherung im Alltag</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div style="margin-top:16px;">
+          <div class="band" id="arbeitsweise">
+            <div class="stack" style="gap:6px;">
+              <strong style="font-size:16px;">Arbeitsweise: klar, modular, nachvollziehbar</strong>
+              <p>Kurzer Abgleich → Zieldefinition → Umsetzung → Dokumentation/Übergabe. Auf Wunsch mit Nachbetreuung.</p>
+            </div>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a class="btn primary" href="#kontakt">Unverbindlich anfragen</a>
+              <a class="btn" href="#ueber-mich">Mehr über mich</a>
+            </div>
           </div>
         </div>
-        <!-- Sekretariatsservice -->
-        <div class="grid md:grid-cols-2 gap-6 items-center">
-          <div>
-            <h4 class="text-xl font-semibold">Sekretariatsservice</h4>
-            <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
-              <li>Schriftsatz-Vorbereitung & Formatprüfung</li>
-              <li>Fristen-, Termin- & Aktenpflege</li>
-              <li>Korrespondenz – klassisch & digital</li>
-              <li>Vertretung bei Unterbesetzung (nach Absprache)</li>
-            </ul>
-          </div>
-          <img src="https://images.unsplash.com/photo-1518085250887-2f903c200fee?q=80&w=1600&auto=format&fit=crop" 
-               alt="Kalender, Fristen & Aktenorganisation" 
-               class="rounded-2xl h-64 w-full object-cover">
-        </div>
-        <!-- Rechnungslegung -->
-        <div class="grid md:grid-cols-2 gap-6 items-center">
-          <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?q=80&w=1600&auto=format&fit=crop" 
-               alt="Rechnungslegung: Belege, Gebührenpositionen, Ablage" 
-               class="rounded-2xl h-64 w-full object-cover">
-          <div>
-            <h4 class="text-xl font-semibold">Rechnungslegung & RVG-Support</h4>
-            <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
-              <li>Gebühren nach VV RVG inkl. Auslagen</li>
-              <li>Entwürfe, Kontrolle & Versandvorbereitung</li>
-              <li>Optionale KI-gestützte Automatisierung</li>
-              <li>Transparente, strukturierte Ablage</li>
-            </ul>
-          </div>
-        </div>
       </div>
+    </section>
 
-      <!-- Flyer-Link -->
-      <p class="mt-8 text-sm md:text-base text-neutral-700">
-        Eine vollständige Übersicht meiner Angebote und Preise finden Sie in meinem
-        <a href="Flyer%20wichmann-kanzleikischulung.pdf"
-           target="_blank"
-           rel="noopener"
-           class="text-blue-600 underline">
-          Flyer als PDF
-        </a>.
-      </p>
-    </div>
-  </section>
-
-  <!-- Schulungen -->
-  <section id="schulungen" class="bg-neutral-50">
-    <div class="container mx-auto px-4 py-16">
-      <h3 class="text-2xl md:text-3xl font-bold">KI-Schulungen – Inhalte & Formate</h3>
-      <div class="mt-10 grid gap-10">
-        <div class="grid md:grid-cols-2 gap-6 items-center">
-          <div>
-            <h4 class="text-xl font-semibold">Inhalte</h4>
-            <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
-              <li>Recherche & Entwurf – vom Mandantenbrief bis zum Schriftsatz</li>
-              <li>Prozesssichere Prompt-Techniken & Review</li>
-              <li>Datenschutz, Vertraulichkeit, Mandatsgeheimnis</li>
-              <li>Qualitätssicherung & Dokumentation</li>
-            </ul>
-          </div>
-          <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=1600&auto=format&fit=crop" 
-               alt="KI Inhalte" 
-               class="rounded-2xl h-64 w-full object-cover">
+    <section id="ueber-mich">
+      <div class="container">
+        <div class="section-title">
+          <h2>Über mich</h2>
+          <p>Kurz, klar, ohne Ausschmückung: Struktur, Verlässlichkeit und saubere Ergebnisse.</p>
         </div>
-        <div class="grid md:grid-cols-2 gap-6 items-center">
-          <img src="https://images.unsplash.com/photo-1588702547923-7093a6c3ba33?q=80&w=1600&auto=format&fit=crop" 
-               alt="Live-Online Schulung" 
-               class="rounded-2xl h-64 w-full object-cover">
-          <div>
-            <h4 class="text-xl font-semibold">Formate</h4>
-            <ul class="mt-3 text-neutral-700 list-disc ml-5 space-y-1 text-sm">
-              <li><strong>Live-Online via gängigen Tools</strong> (Standard)</li>
-              <li><strong>Einzelschulung</strong> oder <strong>kleine Teams</strong></li>
-              <li><strong>Follow-up-Sprechstunde (Q&amp;A)</strong> zur Vertiefung</li>
-              <li><strong>Vor Ort nur in Ausnahmefällen (Berlin)</strong> nach Absprache</li>
-            </ul>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Wofür ich stehe</h3>
+            <p>
+              Ich bringe Ordnung in Abläufe und Dokumente – und nutze KI dort, wo sie wirklich hilft.
+              Qualität, Nachvollziehbarkeit und Verantwortungsbewusstsein stehen im Vordergrund.
+            </p>
+            <div class="tagrow">
+              <span class="tag">Struktur</span>
+              <span class="tag">Qualität</span>
+              <span class="tag">Praxisnähe</span>
+              <span class="tag">Vertraulichkeit</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Wichtiger Hinweis</h3>
+            <p>
+              Meine Leistungen sind organisatorisch/unterstützend. Es erfolgt keine Rechtsberatung.
+              Inhalte werden so aufbereitet, dass interne Prozesse sicher und verständlich bleiben.
+            </p>
+            <div class="tagrow">
+              <span class="tag">Abgrenzung</span>
+              <span class="tag">Sauberer Rahmen</span>
+              <span class="tag">Verlässlichkeit</span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Über mich -->
-  <section id="ueber" class="bg-white border-y">
-    <div class="container mx-auto px-4 py-16 grid md:grid-cols-3 gap-10 items-start">
-      <div class="md:col-span-2">
-        <h3 class="text-2xl md:text-3xl font-bold">Über mich</h3>
-        <p class="mt-3 text-neutral-700">
-          Ich bin gelernte <strong>Rechtsanwalts- und Notarfachangestellte</strong> mit langjähriger Praxis in Mandantenkommunikation, Forderungseinzug, Schriftsatz-Erstellung und Gebührenabrechnung. Zusatzqualifikation als Social-Media-Managerin. Fachreferentin für Kostenrecht (RVG). Derzeit Weiterbildung in Data Science &amp; Machine Learning (Abschluss vorauss. Dezember). <strong>Leitbild:</strong> Tradition bewahren. Workflows vereinfachen. Qualität sichern – KI dort, wo sie wirklich nützt.
-        </p>
-      </div>
-      <div class="rounded-2xl shadow-sm bg-white">
-        <img src="https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200&auto=format&fit=crop" 
-             alt="Arbeitsplatz: Dokumente, Tastatur, Notizen" 
-             class="w-full h-40 object-cover rounded-t-2xl">
-        <div class="p-5">
-          <h4 class="font-semibold">Quick Facts</h4>
-          <ul class="mt-3 text-sm text-neutral-700 grid gap-2">
-            <li><strong>Zielgruppe:</strong> Kanzleien und Unternehmen</li>
-            <li><strong>Ausrichtung:</strong> Online-first, praxisnah, datenschutzbewusst</li>
-          </ul>
+    <section id="kontakt">
+      <div class="container">
+        <div class="section-title">
+          <h2>Kontakt</h2>
+          <p>Schreib kurz, worum es geht. Ich melde mich zeitnah mit einem Vorschlag für das Vorgehen.</p>
+        </div>
+
+        <div class="cards">
+          <div class="card">
+            <h3>Kontaktmöglichkeiten</h3>
+            <p style="margin-bottom:10px;">
+              E-Mail: <a href="mailto:wichmann.kathleen@gmx.de">wichmann.kathleen@gmx.de</a><br>
+              Optional: Telefon (nach Absprache)
+            </p>
+            <p style="margin:0;color:var(--muted);font-size:13px;">
+              Hinweis: Bitte keine vertraulichen Originalunterlagen im Erstkontakt, wenn nicht erforderlich.
+            </p>
+          </div>
+
+          <div class="card">
+            <h3>Kurze Anfrage</h3>
+            <form id="contactForm">
+              <div style="display:grid; gap:10px;">
+                <label>
+                  <span style="display:block;font-size:13px;color:var(--muted);margin-bottom:6px;">Thema</span>
+                  <input id="topic" type="text" required
+                    style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;font-size:14px;" />
+                </label>
+                <label>
+                  <span style="display:block;font-size:13px;color:var(--muted);margin-bottom:6px;">Kurzbeschreibung</span>
+                  <textarea id="msg" rows="5" required
+                    style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;font-size:14px;resize:vertical;"></textarea>
+                </label>
+                <button class="btn primary" type="submit">E-Mail vorbereiten</button>
+                <p style="margin:0;color:var(--muted);font-size:12px;">
+                  Klick öffnet dein Mailprogramm mit vorausgefüllter Nachricht (ohne Speicherung auf der Website).
+                </p>
+              </div>
+            </form>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Kontakt -->
-  <section id="kontakt" class="bg-neutral-50">
-    <div class="container mx-auto px-4 py-16">
-      <h3 class="text-2xl md:text-3xl font-bold">Kontakt</h3>
-      <div class="mt-6">
-        <p class="text-lg text-neutral-700">
-          Für Anfragen erreichen Sie mich direkt unter: 
-          <a href="mailto:kathleen.wichmann@email.de" class="text-blue-600 underline">kathleen.wichmann@email.de</a>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Impressum -->
-  <section id="impressum" class="bg-white border-y">
-    <div class="container mx-auto px-4 py-16">
-      <h3 class="text-2xl md:text-3xl font-bold">Impressum</h3>
-      <div class="mt-4 text-neutral-700 space-y-2">
-        <p><strong>Angaben gemäß § 5 TMG</strong></p>
-        <p>Kathleen Wichmann<br>Büroservice & Kanzlei-Schulung<br>Schillerstraße 109<br>12305 Berlin</p>
-        <p><strong>Berufsbezeichnung</strong><br>Rechtsanwalts- und Notarfachangestellte (Ausbildung in Deutschland). <strong>Es erfolgt keine Rechtsberatung.</strong> Leistungen beschränken sich auf Schulungen, organisatorische Unterstützung und Büro-/Sekretariatsservice.</p>
-        <p><strong>Umsatzsteuer</strong><br>Es wird keine Umsatzsteuer ausgewiesen. Anwendung der Kleinunternehmerregelung gemäß § 19 UStG.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Datenschutz -->
-  <section id="datenschutz" class="bg-neutral-50">
-    <div class="container mx-auto px-4 py-16">
-      <h3 class="text-2xl md:text-3xl font-bold">Datenschutzerklärung</h3>
-      <div class="mt-4 text-neutral-700 space-y-3 text-sm leading-6">
-        <p><strong>1. Verantwortliche</strong><br>Kathleen Wichmann, Schillerstraße 109, 12305 Berlin. Kontakt über: <a href="mailto:kathleen.wichmann@email.de" class="text-blue-600 underline">kathleen.wichmann@email.de</a></p>
-        <p><strong>2. Hosting</strong><br>Diese Website wird über GitHub Pages bereitgestellt. Beim Aufruf werden automatisch Server-Logfiles (z. B. IP-Adresse, Datum/Uhrzeit, aufgerufene Seiten) verarbeitet, um den technischen Betrieb sicherzustellen.</p>
-        <p><strong>3. E-Mail Kontakt</strong><br>Ihre Angaben (Name, E-Mail, Nachricht) werden ausschließlich zum Zweck der Beantwortung Ihrer Anfrage verarbeitet (Art. 6 Abs. 1 lit. b DSGVO). Die Daten werden gelöscht, sobald die Anfrage abschließend bearbeitet ist; gesetzliche Aufbewahrungspflichten bleiben unberührt.</p>
-        <p><strong>4. Cookies/Tracking</strong><br>Diese Website setzt keine Analyse-Cookies ein und verwendet kein externes Tracking.</p>
-        <p><strong>5. Ihre Rechte</strong><br>Sie haben das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit sowie Widerspruch. Zudem besteht ein Beschwerderecht bei einer Datenschutzaufsichtsbehörde.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="border-t bg-white">
-    <div class="container mx-auto px-4 py-8 text-sm text-neutral-600 flex flex-col md:flex-row md:items-center justify-between gap-4">
-      <p>© 2025 Kathleen Wichmann – Büroservice & Kanzlei-Schulung</p>
-      <div class="flex items-center gap-6">
-        <a href="#impressum" class="hover:underline">Impressum</a>
-        <a href="#datenschutz" class="hover:underline">Datenschutz</a>
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>© <span id="year"></span> Büroservice & Kanzlei-Schulung</div>
+        <div class="footer-links">
+          <a href="#top">Nach oben</a>
+          <!-- Du hast diese Dateien aktuell nicht im Repo: Links sind vorerst auskommentiert. -->
+          <!-- <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a> -->
+        </div>
       </div>
     </div>
   </footer>
 
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Accordion logic (single open at a time)
+    const items = Array.from(document.querySelectorAll(".acc-item"));
+    items.forEach((item) => {
+      const btn = item.querySelector(".acc-btn");
+      btn.addEventListener("click", () => {
+        const isOpen = item.getAttribute("aria-expanded") === "true";
+        items.forEach(i => i.setAttribute("aria-expanded", "false"));
+        item.setAttribute("aria-expanded", isOpen ? "false" : "true");
+      });
+    });
+
+    // Optional: Preselect topic based on audience card
+    document.querySelectorAll("[data-prefill]").forEach((el) => {
+      el.addEventListener("click", () => {
+        const val = el.getAttribute("data-prefill");
+        const topic = document.getElementById("topic");
+        if (!topic.value) {
+          topic.value = val === "kanzlei" ? "Anfrage – Kanzlei" : "Anfrage – Unternehmen";
+        }
+      });
+    });
+
+    // Mailto form
+    document.getElementById("contactForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      const to = "wichmann.kathleen@gmx.de";
+      const topic = document.getElementById("topic").value.trim();
+      const msg = document.getElementById("msg").value.trim();
+      const subject = encodeURIComponent(topic || "Anfrage über die Website");
+      const body = encodeURIComponent(msg + "\n\n—\n(gesendet über die Website)");
+      window.location.href = `mailto:${to}?subject=${subject}&body=${body}`;
+    });
+  </script>
 </body>
 </html>
