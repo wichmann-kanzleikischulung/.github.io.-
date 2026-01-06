@@ -13,12 +13,14 @@
       --muted: #6b7280;
       --line: #e5e7eb;
       --card: #f9fafb;
+      --accent: #111827; /* bewusst seriös */
       --accent2: #0f172a;
       --shadow: 0 10px 30px rgba(15, 23, 42, .08);
       --radius: 16px;
       --radius2: 12px;
       --max: 1120px;
     }
+
     *{ box-sizing: border-box; }
     html,body{ height: 100%; }
     body{
@@ -30,9 +32,12 @@
     }
     a{ color: inherit; text-decoration: none; }
     a:hover{ text-decoration: underline; }
+
+    /* Layout helpers */
     .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
     .stack{ display:flex; flex-direction: column; gap: 18px; }
 
+    /* Header */
     header{
       position: sticky;
       top: 0;
@@ -48,10 +53,11 @@
       padding: 14px 0;
       gap: 16px;
     }
-    .brand{ display:flex; flex-direction: column; gap: 2px; }
+    .brand{
+      display:flex; flex-direction: column; gap: 2px;
+    }
     .brand strong{ font-size: 15px; letter-spacing: .2px; }
     .brand span{ font-size: 13px; color: var(--muted); }
-
     nav ul{
       list-style:none; margin:0; padding:0;
       display:flex; gap: 18px; align-items:center;
@@ -67,8 +73,11 @@
     }
     nav a:hover{ background: #f3f4f6; text-decoration:none; }
 
-    .nav-cta{ display:flex; gap: 10px; align-items:center; }
+    .nav-cta{
+      display:flex; gap: 10px; align-items:center;
+    }
 
+    /* Buttons */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
       padding: 11px 14px;
@@ -89,9 +98,12 @@
       border-color: var(--accent2);
     }
     .btn.primary:hover{ background: #0b1222; }
-    .btn.ghost{ background: transparent; }
+    .btn.ghost{
+      background: transparent;
+    }
     .btn.small{ padding: 9px 12px; border-radius: 10px; font-size: 13px; }
 
+    /* Hero */
     .hero{
       padding: 44px 0 28px;
       border-bottom: 1px solid var(--line);
@@ -141,13 +153,16 @@
       color: var(--muted);
       font-size: 14px;
     }
-    .bullet{ display:flex; gap: 10px; align-items:flex-start; }
+    .bullet{
+      display:flex; gap: 10px; align-items:flex-start;
+    }
     .dot{
       width: 8px; height: 8px; border-radius: 999px;
       background: var(--accent2);
       margin-top: 7px;
       flex: none;
     }
+
     .hero-card{
       background: var(--card);
       border: 1px solid var(--line);
@@ -155,19 +170,39 @@
       padding: 18px;
       box-shadow: var(--shadow);
     }
-    .hero-card h3{ margin: 0 0 10px; font-size: 16px; letter-spacing: .2px; }
-    .hero-card ul{ margin: 0; padding-left: 18px; color: var(--muted); font-size: 14px; }
+    .hero-card h3{
+      margin: 0 0 10px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .hero-card ul{
+      margin: 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 14px;
+    }
     .hero-card li{ margin: 8px 0; }
 
+    /* Sections */
     section{ padding: 34px 0; }
     .section-title{
       display:flex; align-items:flex-end; justify-content: space-between;
       gap: 16px; flex-wrap: wrap;
       margin-bottom: 16px;
     }
-    .section-title h2{ margin: 0; font-size: 22px; letter-spacing: -0.2px; }
-    .section-title p{ margin: 0; color: var(--muted); font-size: 14px; max-width: 70ch; }
+    .section-title h2{
+      margin: 0;
+      font-size: 22px;
+      letter-spacing: -0.2px;
+    }
+    .section-title p{
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      max-width: 70ch;
+    }
 
+    /* Audience cards */
     .cards{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
@@ -178,6 +213,7 @@
       border: 1px solid var(--line);
       border-radius: var(--radius);
       padding: 16px;
+      box-shadow: 0 0 0 rgba(0,0,0,0);
       transition: box-shadow .15s ease, transform .05s ease;
     }
     .card:hover{ box-shadow: var(--shadow); text-decoration:none; }
@@ -194,6 +230,7 @@
       background: #fff;
     }
 
+    /* Accordion */
     .accordion{
       border: 1px solid var(--line);
       border-radius: var(--radius);
@@ -216,7 +253,12 @@
       font-size: 15px;
     }
     .acc-btn:hover{ background: #f9fafb; }
-    .acc-meta{ font-weight: 600; color: var(--muted); font-size: 13px; margin-left: 8px; }
+    .acc-meta{
+      font-weight: 600;
+      color: var(--muted);
+      font-size: 13px;
+      margin-left: 8px;
+    }
     .chev{
       width: 22px; height: 22px; flex: none;
       border-radius: 10px;
@@ -226,7 +268,12 @@
       transition: transform .15s ease;
     }
     .acc-item[aria-expanded="true"] .chev{ transform: rotate(180deg); }
-    .acc-panel{ padding: 0 16px 16px; color: var(--muted); font-size: 14px; display: none; }
+    .acc-panel{
+      padding: 0 16px 16px;
+      color: var(--muted);
+      font-size: 14px;
+      display: none;
+    }
     .acc-item[aria-expanded="true"] .acc-panel{ display: block; }
     .acc-panel .cols{
       display:grid;
@@ -250,6 +297,7 @@
     .acc-panel ul{ margin:0; padding-left: 18px; }
     .acc-panel li{ margin: 6px 0; }
 
+    /* CTA band */
     .band{
       background: #0b1222;
       color: #fff;
@@ -266,6 +314,7 @@
     .band .btn.primary{ background: #fff; color: #0b1222; border-color: #fff; }
     .band .btn.primary:hover{ background: #f3f4f6; }
 
+    /* Footer */
     footer{
       border-top: 1px solid var(--line);
       padding: 22px 0;
@@ -279,8 +328,13 @@
       flex-wrap: wrap;
       align-items: center;
     }
-    .footer-links{ display:flex; gap: 14px; flex-wrap: wrap; }
+    .footer-links{
+      display:flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
 
+    /* Responsive */
     @media (max-width: 920px){
       .hero-grid{ grid-template-columns: 1fr; }
       .hero-bullets{ grid-template-columns: 1fr; }
@@ -318,6 +372,7 @@
   </header>
 
   <main id="top">
+    <!-- HERO -->
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
@@ -360,6 +415,7 @@
       </div>
     </section>
 
+    <!-- ZIELGRUPPEN -->
     <section>
       <div class="container">
         <div class="section-title">
@@ -371,7 +427,7 @@
           <a id="fuer-kanzleien" class="card" href="#kontakt" data-prefill="kanzlei">
             <h3>Für Kanzleien</h3>
             <p>Workflows, Schriftsatz- und Kommunikationsprozesse, sichere KI-Nutzung, Qualitätssicherung – sauber und praxistauglich.</p>
-            <div class="tagrow">
+            <div class="tagrow" aria-label="Tags">
               <span class="tag">Fristen & Wiedervorlage</span>
               <span class="tag">Vorlagen</span>
               <span class="tag">Qualitätscheck</span>
@@ -382,7 +438,7 @@
           <a id="fuer-unternehmen" class="card" href="#kontakt" data-prefill="unternehmen">
             <h3>Für Unternehmen</h3>
             <p>Backoffice-Entlastung, Dokumentenstruktur, Automatisierung wiederkehrender Aufgaben und klare Standards für KI im Alltag.</p>
-            <div class="tagrow">
+            <div class="tagrow" aria-label="Tags">
               <span class="tag">Backoffice</span>
               <span class="tag">Dokumente</span>
               <span class="tag">Automatisierung</span>
@@ -393,14 +449,16 @@
       </div>
     </section>
 
+    <!-- LEISTUNGEN + ACCORDION -->
     <section id="leistungen">
       <div class="container">
         <div class="section-title">
           <h2>Leistungen</h2>
-          <p>Klick auf die Unterkategorie – der jeweilige Text klappt darunter auf. Modular buchbar, einzeln oder kombiniert.</p>
+          <p>Klicken Sie auf die Unterkategorie – der jeweilige Text klappt darunter auf. Modular buchbar, einzeln oder kombiniert.</p>
         </div>
 
         <div class="accordion" role="region" aria-label="Leistungsübersicht">
+          <!-- 1 -->
           <div class="acc-item" aria-expanded="true">
             <button class="acc-btn" type="button">
               <span>KI & Workflow-Optimierung <span class="acc-meta">Einführung & sichere Nutzung</span></span>
@@ -408,7 +466,8 @@
             </button>
             <div class="acc-panel">
               <p>
-                Strukturierte Einführung von KI in bestehende Abläufe – mit klaren Regeln, praxistauglichen Vorlagen und verständlicher Dokumentation.
+                Ich unterstütze bei der strukturierten Einführung von KI in bestehende Abläufe – mit klaren Regeln, praxistauglichen Vorlagen und verständlicher Dokumentation.
+                Ziel ist Entlastung, nicht Technik um der Technik willen.
               </p>
               <div class="cols">
                 <div class="box">
@@ -431,6 +490,7 @@
             </div>
           </div>
 
+          <!-- 2 -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
               <span>Dokumenten- & Prozessstruktur <span class="acc-meta">Ordnung, Ablage, Klarheit</span></span>
@@ -438,7 +498,7 @@
             </button>
             <div class="acc-panel">
               <p>
-                Ordnung in Dokumenten und Abläufen: klare Strukturen, nachvollziehbare Standards, weniger Reibungsverluste im Alltag.
+                Wenn Dokumente, Ablagen oder Abläufe „gewachsen“ sind, kostet das jeden Tag Zeit. Ich helfe dabei, Struktur herzustellen – nachvollziehbar, praktikabel und wartbar.
               </p>
               <div class="cols">
                 <div class="box">
@@ -461,6 +521,7 @@
             </div>
           </div>
 
+          <!-- 3 -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
               <span>Qualitätssicherung & Human-in-the-Loop <span class="acc-meta">Prüfen statt Blindflug</span></span>
@@ -468,15 +529,15 @@
             </button>
             <div class="acc-panel">
               <p>
-                Prüfung und Absicherung von KI-Ergebnissen: Logik, Struktur, Vollständigkeit – damit Inhalte verantwortbar bleiben.
+                KI kann schnell sein – aber nicht automatisch richtig. Ich prüfe Ergebnisse, sichere Standards ab und sorge dafür, dass Inhalte nachvollziehbar und verantwortbar bleiben.
               </p>
               <div class="cols">
                 <div class="box">
                   <strong>Typische Aufgaben</strong>
                   <ul>
-                    <li>Prüfung von KI-Texten</li>
-                    <li>Qualitätsstandards & Freigabeprozesse</li>
-                    <li>Feedbackschleifen zur Verbesserung</li>
+                    <li>Prüfung von KI-Texten auf Logik, Struktur, Vollständigkeit</li>
+                    <li>Definition von Qualitätsstandards & Freigabeprozessen</li>
+                    <li>Feedbackschleifen zur Verbesserung der Ergebnisse</li>
                   </ul>
                 </div>
                 <div class="box">
@@ -491,6 +552,7 @@
             </div>
           </div>
 
+          <!-- 4 -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
               <span>Backoffice-Unterstützung <span class="acc-meta">Entlastung nach Absprache</span></span>
@@ -498,15 +560,15 @@
             </button>
             <div class="acc-panel">
               <p>
-                Operative Unterstützung bei wiederkehrenden Aufgaben. Klar abgegrenzt: organisatorisch, keine Rechtsberatung und keine Außenvertretung.
+                Auf Wunsch unterstütze ich operativ bei wiederkehrenden Aufgaben. Klar abgegrenzt: organisatorische Tätigkeiten, keine Rechtsberatung und keine Außenvertretung.
               </p>
               <div class="cols">
                 <div class="box">
                   <strong>Beispiele</strong>
                   <ul>
-                    <li>Dokumentenpakete vorbereiten</li>
+                    <li>Kommunikations- und Dokumentenpakete vorbereiten</li>
                     <li>Vorlagenpflege, Standardtexte, Ablage</li>
-                    <li>Abrechnungsvorbereitung</li>
+                    <li>Unterstützung bei Abrechnungsvorbereitung</li>
                   </ul>
                 </div>
                 <div class="box">
@@ -521,6 +583,7 @@
             </div>
           </div>
 
+          <!-- 5 -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
               <span>Schulungen & Enablement <span class="acc-meta">praxisnah, ohne Überforderung</span></span>
@@ -528,7 +591,7 @@
             </button>
             <div class="acc-panel">
               <p>
-                Kurze, praxistaugliche Schulungen zur sicheren Nutzung von KI und Tools – direkt am Arbeitsalltag orientiert.
+                Kurze, praxistaugliche Schulungen zur sicheren Nutzung von KI und Tools. Kein Frontalunterricht, sondern direkt am Arbeitsalltag orientiert.
               </p>
               <div class="cols">
                 <div class="box">
@@ -540,7 +603,7 @@
                   </ul>
                 </div>
                 <div class="box">
-                  <strong>Inhalte</strong>
+                  <strong>Inhalte (Auszug)</strong>
                   <ul>
                     <li>Prompts, Vorlagen, Standards</li>
                     <li>Datenschutz & sichere Nutzung</li>
@@ -565,9 +628,11 @@
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
+    <!-- ÜBER MICH -->
     <section id="ueber-mich">
       <div class="container">
         <div class="section-title">
@@ -594,7 +659,7 @@
             <h3>Wichtiger Hinweis</h3>
             <p>
               Meine Leistungen sind organisatorisch/unterstützend. Es erfolgt keine Rechtsberatung.
-              Inhalte werden so aufbereitet, dass interne Prozesse sicher und verständlich bleiben.
+              Inhalte werden stets so aufbereitet, dass interne Prozesse sicher und verständlich bleiben.
             </p>
             <div class="tagrow">
               <span class="tag">Abgrenzung</span>
@@ -606,18 +671,19 @@
       </div>
     </section>
 
+    <!-- KONTAKT -->
     <section id="kontakt">
       <div class="container">
         <div class="section-title">
           <h2>Kontakt</h2>
-          <p>Schreib kurz, worum es geht. Ich melde mich zeitnah mit einem Vorschlag für das Vorgehen.</p>
+          <p>Schreiben Sie mir kurz, worum es geht. Ich melde mich zeitnah mit einem Vorschlag für das Vorgehen.</p>
         </div>
 
         <div class="cards">
           <div class="card">
             <h3>Kontaktmöglichkeiten</h3>
             <p style="margin-bottom:10px;">
-              E-Mail: <a href="mailto:wichmann.kathleen@gmx.de">wichmann.kathleen@gmx.de</a><br>
+              E-Mail: <a href="mailto:DEINE-EMAIL@domain.de">DEINE-EMAIL@domain.de</a><br>
               Optional: Telefon (nach Absprache)
             </p>
             <p style="margin:0;color:var(--muted);font-size:13px;">
@@ -627,6 +693,7 @@
 
           <div class="card">
             <h3>Kurze Anfrage</h3>
+            <!-- Simple mailto fallback, funktioniert ohne Backend -->
             <form id="contactForm">
               <div style="display:grid; gap:10px;">
                 <label>
@@ -641,7 +708,7 @@
                 </label>
                 <button class="btn primary" type="submit">E-Mail vorbereiten</button>
                 <p style="margin:0;color:var(--muted);font-size:12px;">
-                  Klick öffnet dein Mailprogramm mit vorausgefüllter Nachricht (ohne Speicherung auf der Website).
+                  Klick öffnet Ihr Mailprogramm mit vorausgefüllter Nachricht (ohne Speicherung auf der Website).
                 </p>
               </div>
             </form>
@@ -657,15 +724,15 @@
         <div>© <span id="year"></span> Büroservice & Kanzlei-Schulung</div>
         <div class="footer-links">
           <a href="#top">Nach oben</a>
-          <!-- Du hast diese Dateien aktuell nicht im Repo: Links sind vorerst auskommentiert. -->
-          <!-- <a href="impressum.html">Impressum</a>
-          <a href="datenschutz.html">Datenschutz</a> -->
+          <a href="impressum.html">Impressum</a>
+          <a href="datenschutz.html">Datenschutz</a>
         </div>
       </div>
     </div>
   </footer>
 
   <script>
+    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // Accordion logic (single open at a time)
@@ -674,7 +741,9 @@
       const btn = item.querySelector(".acc-btn");
       btn.addEventListener("click", () => {
         const isOpen = item.getAttribute("aria-expanded") === "true";
+        // close all
         items.forEach(i => i.setAttribute("aria-expanded", "false"));
+        // open clicked if it was closed
         item.setAttribute("aria-expanded", isOpen ? "false" : "true");
       });
     });
@@ -693,7 +762,7 @@
     // Mailto form
     document.getElementById("contactForm").addEventListener("submit", (e) => {
       e.preventDefault();
-      const to = "wichmann.kathleen@gmx.de";
+      const to = "DEINE-EMAIL@domain.de"; // <-- HIER deine E-Mail eintragen
       const topic = document.getElementById("topic").value.trim();
       const msg = document.getElementById("msg").value.trim();
       const subject = encodeURIComponent(topic || "Anfrage über die Website");
