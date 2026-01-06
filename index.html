@@ -53,11 +53,39 @@
       padding: 14px 0;
       gap: 16px;
     }
+
+    /* BRAND WITH LOGO */
     .brand{
-      display:flex; flex-direction: column; gap: 2px;
+      display:flex;
+      align-items:center;
+      gap: 12px;
+      min-width: 240px;
     }
-    .brand strong{ font-size: 15px; letter-spacing: .2px; }
-    .brand span{ font-size: 13px; color: var(--muted); }
+    .brand-logo{
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      background: #fff;
+      flex: none;
+      display:grid;
+      place-items:center;
+    }
+    .brand-logo img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .brand-text{
+      display:flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .brand-text strong{ font-size: 15px; letter-spacing: .2px; }
+    .brand-text span{ font-size: 13px; color: var(--muted); }
+
     nav ul{
       list-style:none; margin:0; padding:0;
       display:flex; gap: 18px; align-items:center;
@@ -230,6 +258,26 @@
       background: #fff;
     }
 
+    /* Audience cards with image */
+    .card-media{
+      padding: 0;
+      overflow: hidden;
+    }
+    .card-media .card-img{
+      height: 170px;
+      border-bottom: 1px solid var(--line);
+      background: var(--card);
+    }
+    .card-media .card-img img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display:block;
+    }
+    .card-media .card-body{
+      padding: 16px;
+    }
+
     /* Accordion */
     .accordion{
       border: 1px solid var(--line);
@@ -259,6 +307,24 @@
       font-size: 13px;
       margin-left: 8px;
     }
+
+    /* Accordion thumb */
+    .acc-left{
+      display:flex;
+      align-items:center;
+      gap: 12px;
+    }
+    .acc-thumb{
+      width: 48px;
+      height: 36px;
+      border-radius: 12px;
+      object-fit: cover;
+      border: 1px solid var(--line);
+      background: #fff;
+      flex: none;
+      display:block;
+    }
+
     .chev{
       width: 22px; height: 22px; flex: none;
       border-radius: 10px;
@@ -349,8 +415,13 @@
     <div class="container">
       <div class="nav">
         <a class="brand" href="#top" aria-label="Startseite">
-          <strong>Büroservice & Kanzlei-Schulung</strong>
-          <span>Effiziente Prozesse • KI-gestützt • praxisnah</span>
+          <span class="brand-logo">
+            <img src="logo.jpg" alt="Logo">
+          </span>
+          <span class="brand-text">
+            <strong>Büroservice & Kanzlei-Schulung</strong>
+            <span>Effiziente Prozesse • KI-gestützt • praxisnah</span>
+          </span>
         </a>
 
         <nav aria-label="Hauptnavigation">
@@ -424,25 +495,35 @@
         </div>
 
         <div class="cards">
-          <a id="fuer-kanzleien" class="card" href="#kontakt" data-prefill="kanzlei">
-            <h3>Für Kanzleien</h3>
-            <p>Workflows, Schriftsatz- und Kommunikationsprozesse, sichere KI-Nutzung, Qualitätssicherung – sauber und praxistauglich.</p>
-            <div class="tagrow" aria-label="Tags">
-              <span class="tag">Fristen & Wiedervorlage</span>
-              <span class="tag">Vorlagen</span>
-              <span class="tag">Qualitätscheck</span>
-              <span class="tag">KI-Regeln</span>
+          <a id="fuer-kanzleien" class="card card-media" href="#kontakt" data-prefill="kanzlei">
+            <div class="card-img">
+              <img src="kanzlei.png" alt="">
+            </div>
+            <div class="card-body">
+              <h3>Für Kanzleien</h3>
+              <p>Workflows, Schriftsatz- und Kommunikationsprozesse, sichere KI-Nutzung, Qualitätssicherung – sauber und praxistauglich.</p>
+              <div class="tagrow" aria-label="Tags">
+                <span class="tag">Fristen & Wiedervorlage</span>
+                <span class="tag">Vorlagen</span>
+                <span class="tag">Qualitätscheck</span>
+                <span class="tag">KI-Regeln</span>
+              </div>
             </div>
           </a>
 
-          <a id="fuer-unternehmen" class="card" href="#kontakt" data-prefill="unternehmen">
-            <h3>Für Unternehmen</h3>
-            <p>Backoffice-Entlastung, Dokumentenstruktur, Automatisierung wiederkehrender Aufgaben und klare Standards für KI im Alltag.</p>
-            <div class="tagrow" aria-label="Tags">
-              <span class="tag">Backoffice</span>
-              <span class="tag">Dokumente</span>
-              <span class="tag">Automatisierung</span>
-              <span class="tag">Enablement</span>
+          <a id="fuer-unternehmen" class="card card-media" href="#kontakt" data-prefill="unternehmen">
+            <div class="card-img">
+              <img src="unternehmen.png" alt="">
+            </div>
+            <div class="card-body">
+              <h3>Für Unternehmen</h3>
+              <p>Backoffice-Entlastung, Dokumentenstruktur, Automatisierung wiederkehrender Aufgaben und klare Standards für KI im Alltag.</p>
+              <div class="tagrow" aria-label="Tags">
+                <span class="tag">Backoffice</span>
+                <span class="tag">Dokumente</span>
+                <span class="tag">Automatisierung</span>
+                <span class="tag">Enablement</span>
+              </div>
             </div>
           </a>
         </div>
@@ -461,7 +542,10 @@
           <!-- 1 -->
           <div class="acc-item" aria-expanded="true">
             <button class="acc-btn" type="button">
-              <span>KI & Workflow-Optimierung <span class="acc-meta">Einführung & sichere Nutzung</span></span>
+              <span class="acc-left">
+                <img class="acc-thumb" src="ki-workflow.png" alt="">
+                <span>KI & Workflow-Optimierung <span class="acc-meta">Einführung & sichere Nutzung</span></span>
+              </span>
               <span class="chev" aria-hidden="true">▾</span>
             </button>
             <div class="acc-panel">
@@ -493,7 +577,10 @@
           <!-- 2 -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
-              <span>Dokumenten- & Prozessstruktur <span class="acc-meta">Ordnung, Ablage, Klarheit</span></span>
+              <span class="acc-left">
+                <img class="acc-thumb" src="dokumente.png" alt="">
+                <span>Dokumenten- & Prozessstruktur <span class="acc-meta">Ordnung, Ablage, Klarheit</span></span>
+              </span>
               <span class="chev" aria-hidden="true">▾</span>
             </button>
             <div class="acc-panel">
@@ -524,7 +611,10 @@
           <!-- 3 -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
-              <span>Qualitätssicherung & Human-in-the-Loop <span class="acc-meta">Prüfen statt Blindflug</span></span>
+              <span class="acc-left">
+                <img class="acc-thumb" src="qualitaet.png" alt="">
+                <span>Qualitätssicherung & Human-in-the-Loop <span class="acc-meta">Prüfen statt Blindflug</span></span>
+              </span>
               <span class="chev" aria-hidden="true">▾</span>
             </button>
             <div class="acc-panel">
@@ -555,7 +645,10 @@
           <!-- 4 -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
-              <span>Backoffice-Unterstützung <span class="acc-meta">Entlastung nach Absprache</span></span>
+              <span class="acc-left">
+                <img class="acc-thumb" src="backoffice.png" alt="">
+                <span>Backoffice-Unterstützung <span class="acc-meta">Entlastung nach Absprache</span></span>
+              </span>
               <span class="chev" aria-hidden="true">▾</span>
             </button>
             <div class="acc-panel">
@@ -586,7 +679,10 @@
           <!-- 5 -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
-              <span>Schulungen & Enablement <span class="acc-meta">praxisnah, ohne Überforderung</span></span>
+              <span class="acc-left">
+                <img class="acc-thumb" src="schulung.png" alt="">
+                <span>Schulungen & Enablement <span class="acc-meta">praxisnah, ohne Überforderung</span></span>
+              </span>
               <span class="chev" aria-hidden="true">▾</span>
             </button>
             <div class="acc-panel">
@@ -681,13 +777,9 @@
 
         <div class="cards">
           <div class="card">
-            <h3>Kontaktmöglichkeiten</h3>
+            <h3>E-Mail</h3>
             <p style="margin-bottom:10px;">
-              E-Mail: <a href="mailto:DEINE-EMAIL@domain.de">DEINE-EMAIL@domain.de</a><br>
-              Optional: Telefon (nach Absprache)
-            </p>
-            <p style="margin:0;color:var(--muted);font-size:13px;">
-              Hinweis: Bitte keine vertraulichen Originalunterlagen im Erstkontakt, wenn nicht erforderlich.
+              <a href="mailto:wichmann.kathleen@gmx.de">wichmann.kathleen@gmx.de</a>
             </p>
           </div>
 
@@ -762,7 +854,7 @@
     // Mailto form
     document.getElementById("contactForm").addEventListener("submit", (e) => {
       e.preventDefault();
-      const to = "DEINE-EMAIL@domain.de"; // <-- HIER deine E-Mail eintragen
+      const to = "wichmann.kathleen@gmx.de";
       const topic = document.getElementById("topic").value.trim();
       const msg = document.getElementById("msg").value.trim();
       const subject = encodeURIComponent(topic || "Anfrage über die Website");
