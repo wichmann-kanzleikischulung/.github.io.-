@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Datenschutzerklärung</title>
+  <style>
+    body{
+      margin:0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      background:#ffffff;
+      color:#111827;
+      line-height:1.6;
+    }
+    .container{
+      max-width:900px;
+      margin:40px auto;
+      padding:0 20px;
+    }
+    h1{font-size:28px;margin-bottom:20px;}
+    h2{font-size:18px;margin-top:30px;}
+    p{margin:8px 0;}
+    a{color:#111827;}
+    footer{
+      margin-top:60px;
+      padding-top:20px;
+      border-top:1px solid #e5e7eb;
+      font-size:13px;
+      color:#6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Datenschutzerklärung</h1>
+
+    <h2>1. Verantwortliche Stelle</h2>
+    <p>
+      Kathleen Wichmann<br>
+      Schillerstraße 109<br>
+      12305 Berlin<br>
+      E-Mail: <a href="mailto:wichmann.kathleen@gmx.de">wichmann.kathleen@gmx.de</a>
+    </p>
+
+    <h2>2. Erhebung und Speicherung personenbezogener Daten</h2>
+    <p>
+      Diese Website dient der Information über meine Leistungen. Personenbezogene Daten werden nur erhoben,
+      wenn Sie mich aktiv per E-Mail kontaktieren.
+    </p>
+
+    <h2>3. Zweck der Datenverarbeitung</h2>
+    <p>
+      Die von Ihnen übermittelten Daten werden ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.
+    </p>
+
+    <h2>4. Weitergabe von Daten</h2>
+    <p>
+      Eine Weitergabe Ihrer Daten an Dritte erfolgt nicht.
+    </p>
+
+    <h2>5. Ihre Rechte</h2>
+    <p>
+      Sie haben das Recht auf Auskunft über Ihre gespeicherten personenbezogenen Daten sowie auf Berichtigung,
+      Löschung oder Einschränkung der Verarbeitung.
+    </p>
+
+    <h2>6. Kontaktaufnahme per E-Mail</h2>
+    <p>
+      Wenn Sie mir per E-Mail Anfragen senden, werden Ihre Angaben zwecks Bearbeitung der Anfrage gespeichert.
+      Diese Daten gebe ich nicht ohne Ihre Einwilligung weiter.
+    </p>
+
+    <footer>
+      <a href="index.html">Zurück zur Startseite</a>
+    </footer>
+  </div>
+</body>
+</html>
