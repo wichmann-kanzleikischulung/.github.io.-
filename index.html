@@ -46,10 +46,12 @@
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
     }
+
+    /* NAV: gerade & stabil */
     .nav{
-      display:flex;
+      display: grid;
+      grid-template-columns: auto 1fr auto;
       align-items:center;
-      justify-content: space-between;
       padding: 14px 0;
       gap: 16px;
     }
@@ -88,10 +90,15 @@
 
     nav ul{
       list-style:none; margin:0; padding:0;
-      display:flex; gap: 18px; align-items:center;
-      flex-wrap: wrap;
-      justify-content: flex-end;
+      display:flex; gap: 14px; align-items:center;
+      flex-wrap: nowrap;              /* WICHTIG: kein Umbruch */
+      justify-content: center;
+      white-space: nowrap;            /* WICHTIG: alles in einer Zeile */
+      overflow-x: auto;               /* falls es mal eng wird: horizontal scroll */
+      scrollbar-width: none;          /* Firefox */
     }
+    nav ul::-webkit-scrollbar{ display:none; }  /* Chrome/Edge */
+
     nav a{
       font-size: 14px;
       color: var(--text);
@@ -401,6 +408,11 @@
     }
 
     /* Responsive */
+    @media (max-width: 1100px){
+      nav a{ font-size: 13px; padding: 7px 9px; }
+      nav ul{ gap: 10px; }
+    }
+
     @media (max-width: 920px){
       .hero-grid{ grid-template-columns: 1fr; }
       .hero-bullets{ grid-template-columns: 1fr; }
@@ -469,7 +481,7 @@
               <div class="bullet"><span class="dot"></span><span>Praxisnah & nachvollziehbar dokumentiert</span></div>
               <div class="bullet"><span class="dot"></span><span>Qualität vor Geschwindigkeit – keine halbgaren Lösungen</span></div>
               <div class="bullet"><span class="dot"></span><span>Klare Abgrenzung: organisatorisch, keine Rechtsberatung</span></div>
-              <div class="bullet"><span class="dot"></span><span>Schlanke Zusammenarbeit – remote oder hybrid nach Absprache</span></div>
+              <div class="bullet"><span class="dot"></span><span>Schlanke Zusammenarbeit – ausschließlich remote</span></div>
             </div>
           </div>
 
@@ -737,16 +749,20 @@
 
         <div class="cards">
           <div class="card">
-            <h3>Wofür ich stehe</h3>
+            <h3>Mein Hintergrund</h3>
             <p>
-              Ich bringe Ordnung in Abläufe und Dokumente – und nutze KI dort, wo sie wirklich hilft.
-              Qualität, Nachvollziehbarkeit und Verantwortungsbewusstsein stehen im Vordergrund.
+              Ich bin ausgebildete Rechtsanwaltsfachangestellte mit langjähriger Erfahrung in der Kanzleipraxis.
+              Neben meiner praktischen Tätigkeit habe ich mich kontinuierlich weitergebildet, u. a. als Fachreferentin für RVG sowie in den Bereichen Social Media Management, KI, Data Science und Machine Learning.
+              Auf dieser Basis unterstütze ich heute Kanzleien und Unternehmen ausschließlich remote bei der Strukturierung von Prozessen und Dokumenten sowie bei der verantwortungsvollen, qualitätsgesicherten Nutzung von KI im Arbeitsalltag.
+              Mein Anspruch: nachvollziehbare Abläufe statt theoretischer Konzepte.
             </p>
             <div class="tagrow">
-              <span class="tag">Struktur</span>
-              <span class="tag">Qualität</span>
-              <span class="tag">Praxisnähe</span>
-              <span class="tag">Vertraulichkeit</span>
+              <span class="tag">Kanzleipraxis</span>
+              <span class="tag">RVG</span>
+              <span class="tag">KI-Workflows</span>
+              <span class="tag">Dokumentenstruktur</span>
+              <span class="tag">Qualitätssicherung</span>
+              <span class="tag">100% remote</span>
             </div>
           </div>
 
