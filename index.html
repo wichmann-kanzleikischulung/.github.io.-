@@ -3,51 +3,66 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Büroservice & Kanzlei-Schulung – Effiziente Prozesse mit KI</title>
-  <meta name="description" content="Effiziente Prozesse für Kanzleien & Unternehmen: KI-Workflows, Dokumentenstruktur, Qualitätssicherung und praktische Unterstützung – remote und praxisnah." />
+  <title>Büroservice & Kanzlei-Schulung – Kanzleiunterstützung & Prozessoptimierung</title>
+  <meta name="description" content="Professionelle Kanzleiunterstützung: Schriftsatzerstellung, Korrespondenz, Forderungsmanagement, Mahnverfahren, Zwangsvollstreckung und Prozessoptimierung – remote und zuverlässig." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <style>
     :root{
-      --bg: #ffffff;
-      --text: #111827;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --card: #f9fafb;
-      --accent: #111827; /* bewusst seriös */
-      --accent2: #0f172a;
-      --shadow: 0 10px 30px rgba(15, 23, 42, .08);
-      --radius: 16px;
-      --radius2: 12px;
-      --max: 1120px;
+      /* Dark navy palette inspired by logo */
+      --bg:        #0d1b2a;
+      --bg2:       #112236;
+      --bg3:       #152c44;
+      --card:      #162d46;
+      --card2:     #1a3455;
+      --line:      rgba(255,255,255,.10);
+      --line2:     rgba(255,255,255,.06);
+
+      --text:      #e8f0f8;
+      --text2:     #c5d8ec;
+      --muted:     #7fa3c4;
+
+      /* Accent: turquoise/cyan from logo */
+      --accent:    #2da8d8;
+      --accent2:   #1e8ab8;
+      --accent-glow: rgba(45,168,216,.18);
+
+      --shadow:    0 12px 40px rgba(0,0,0,.4);
+      --shadow2:   0 4px 16px rgba(0,0,0,.3);
+      --radius:    16px;
+      --radius2:   12px;
+      --max:       1120px;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'DM Sans', system-ui, sans-serif;
     }
 
     *{ box-sizing: border-box; }
-    html,body{ height: 100%; }
+    html,body{ height: 100%; scroll-behavior: smooth; }
     body{
       margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      font-family: var(--font-body);
       color: var(--text);
       background: var(--bg);
-      line-height: 1.5;
+      line-height: 1.6;
     }
     a{ color: inherit; text-decoration: none; }
     a:hover{ text-decoration: underline; }
 
-    /* Layout helpers */
     .container{ width: min(var(--max), calc(100% - 40px)); margin: 0 auto; }
     .stack{ display:flex; flex-direction: column; gap: 18px; }
 
-    /* Header */
+    /* ── HEADER ── */
     header{
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(255,255,255,.9);
-      backdrop-filter: blur(8px);
+      background: rgba(13,27,42,.88);
+      backdrop-filter: blur(12px);
       border-bottom: 1px solid var(--line);
     }
-
-    /* NAV: gerade & stabil */
     .nav{
       display: grid;
       grid-template-columns: auto 1fr auto;
@@ -55,13 +70,11 @@
       padding: 14px 0;
       gap: 16px;
     }
-
-    /* BRAND WITH LOGO */
     .brand{
       display:flex;
       align-items:center;
       gap: 12px;
-      min-width: 240px;
+      min-width: 220px;
     }
     .brand-logo{
       width: 44px;
@@ -80,122 +93,135 @@
       object-fit: cover;
       display:block;
     }
-    .brand-text{
-      display:flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-    .brand-text strong{ font-size: 15px; letter-spacing: .2px; }
-    .brand-text span{ font-size: 13px; color: var(--muted); }
+    .brand-text{ display:flex; flex-direction: column; gap: 2px; }
+    .brand-text strong{ font-size: 15px; letter-spacing: .2px; color: var(--text); }
+    .brand-text span{ font-size: 12px; color: var(--muted); }
 
-    /* NAV LINKS (Desktop: wie bisher) */
     .nav-links{
       list-style:none; margin:0; padding:0;
-      display:flex; gap: 14px; align-items:center;
-      flex-wrap: nowrap;              /* Desktop: kein Umbruch */
+      display:flex; gap: 4px; align-items:center;
       justify-content: center;
-      white-space: nowrap;            /* Desktop: alles in einer Zeile */
-      overflow-x: auto;               /* Desktop: falls eng -> scroll */
-      scrollbar-width: none;          /* Firefox */
+      white-space: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
-    .nav-links::-webkit-scrollbar{ display:none; }  /* Chrome/Edge */
-
+    .nav-links::-webkit-scrollbar{ display:none; }
     nav a{
       font-size: 14px;
-      color: var(--text);
-      opacity: .9;
-      padding: 8px 10px;
+      color: var(--text2);
+      padding: 8px 12px;
       border-radius: 10px;
+      font-weight: 400;
+      transition: background .15s, color .15s;
     }
-    nav a:hover{ background: #f3f4f6; text-decoration:none; }
+    nav a:hover{ background: var(--bg3); color: var(--text); text-decoration:none; }
 
-    .nav-cta{
-      display:flex; gap: 10px; align-items:center;
-    }
+    .nav-cta{ display:flex; gap: 10px; align-items:center; }
 
-    /* Buttons */
+    /* ── BUTTONS ── */
     .btn{
       display:inline-flex; align-items:center; justify-content:center;
-      padding: 11px 14px;
+      padding: 11px 18px;
       border-radius: 12px;
       border: 1px solid var(--line);
-      background: #fff;
+      background: var(--bg3);
+      color: var(--text);
+      font-family: var(--font-body);
       font-weight: 600;
       font-size: 14px;
       cursor:pointer;
       transition: transform .05s ease, background .15s ease, border-color .15s ease;
       white-space: nowrap;
     }
-    .btn:hover{ background:#f9fafb; text-decoration:none; }
+    .btn:hover{ background: var(--card2); text-decoration:none; }
     .btn:active{ transform: translateY(1px); }
     .btn.primary{
-      background: var(--accent2);
+      background: var(--accent);
       color: #fff;
-      border-color: var(--accent2);
+      border-color: var(--accent);
     }
-    .btn.primary:hover{ background: #0b1222; }
-    .btn.ghost{
-      background: transparent;
-    }
-    .btn.small{ padding: 9px 12px; border-radius: 10px; font-size: 13px; }
+    .btn.primary:hover{ background: var(--accent2); border-color: var(--accent2); }
+    .btn.ghost{ background: transparent; border-color: var(--line); }
+    .btn.ghost:hover{ background: var(--bg3); }
+    .btn.small{ padding: 9px 14px; border-radius: 10px; font-size: 13px; }
 
-    /* Hero */
+    /* ── HERO ── */
     .hero{
-      padding: 44px 0 28px;
+      padding: 56px 0 44px;
       border-bottom: 1px solid var(--line);
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before{
+      content:'';
+      position:absolute;
+      top:-120px; right:-80px;
+      width:600px; height:600px;
+      background: radial-gradient(ellipse, rgba(45,168,216,.10) 0%, transparent 70%);
+      pointer-events:none;
     }
     .hero-grid{
       display:grid;
-      grid-template-columns: 1.35fr .9fr;
-      gap: 24px;
+      grid-template-columns: 1.4fr .9fr;
+      gap: 32px;
       align-items: start;
+      position: relative;
     }
     .kicker{
       display:inline-flex;
       gap: 8px;
       align-items:center;
-      font-size: 13px;
-      color: var(--muted);
-      padding: 6px 10px;
-      border: 1px solid var(--line);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: .5px;
+      text-transform: uppercase;
+      color: var(--accent);
+      padding: 6px 12px;
+      border: 1px solid rgba(45,168,216,.3);
       border-radius: 999px;
-      background: #fff;
+      background: rgba(45,168,216,.08);
       width: fit-content;
+      margin-bottom: 16px;
     }
     h1{
-      margin: 10px 0 10px;
-      font-size: clamp(28px, 4vw, 44px);
-      line-height: 1.12;
-      letter-spacing: -0.5px;
+      font-family: var(--font-display);
+      margin: 0 0 16px;
+      font-size: clamp(28px, 3.8vw, 46px);
+      line-height: 1.15;
+      letter-spacing: -0.3px;
+      color: var(--text);
+    }
+    h1 em{
+      font-style: normal;
+      color: var(--accent);
     }
     .lead{
       margin: 0;
-      color: var(--muted);
+      color: var(--text2);
       font-size: 16px;
-      max-width: 62ch;
+      max-width: 58ch;
+      font-weight: 300;
     }
     .hero-actions{
-      margin-top: 18px;
+      margin-top: 24px;
       display:flex;
       flex-wrap: wrap;
       gap: 10px;
       align-items:center;
     }
     .hero-bullets{
-      margin-top: 16px;
+      margin-top: 20px;
       display:grid;
       grid-template-columns: 1fr 1fr;
-      gap: 10px 14px;
+      gap: 10px 20px;
       color: var(--muted);
       font-size: 14px;
     }
-    .bullet{
-      display:flex; gap: 10px; align-items:flex-start;
-    }
+    .bullet{ display:flex; gap: 10px; align-items:flex-start; }
     .dot{
-      width: 8px; height: 8px; border-radius: 999px;
-      background: var(--accent2);
-      margin-top: 7px;
+      width: 6px; height: 6px; border-radius: 999px;
+      background: var(--accent);
+      margin-top: 8px;
       flex: none;
     }
 
@@ -203,95 +229,104 @@
       background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 18px;
+      padding: 22px;
       box-shadow: var(--shadow);
     }
     .hero-card h3{
-      margin: 0 0 10px;
-      font-size: 16px;
+      margin: 0 0 14px;
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--text);
       letter-spacing: .2px;
     }
     .hero-card ul{
       margin: 0;
-      padding-left: 18px;
-      color: var(--muted);
+      padding: 0;
+      list-style: none;
+      color: var(--text2);
       font-size: 14px;
+      font-weight: 300;
     }
-    .hero-card li{ margin: 8px 0; }
+    .hero-card li{
+      margin: 10px 0;
+      padding-left: 16px;
+      position: relative;
+    }
+    .hero-card li::before{
+      content:'';
+      position:absolute;
+      left:0; top:9px;
+      width:5px; height:5px;
+      border-radius:50%;
+      background: var(--accent);
+    }
+    .hero-card li strong{ font-weight: 600; color: var(--text); }
 
-    /* Sections */
-    section{ padding: 34px 0; }
+    /* ── SECTIONS ── */
+    section{ padding: 40px 0; }
     .section-title{
       display:flex; align-items:flex-end; justify-content: space-between;
       gap: 16px; flex-wrap: wrap;
-      margin-bottom: 16px;
+      margin-bottom: 20px;
     }
     .section-title h2{
+      font-family: var(--font-display);
       margin: 0;
-      font-size: 22px;
+      font-size: 26px;
       letter-spacing: -0.2px;
+      color: var(--text);
     }
     .section-title p{
       margin: 0;
       color: var(--muted);
       font-size: 14px;
-      max-width: 70ch;
+      max-width: 64ch;
+      font-weight: 300;
     }
 
-    /* Audience cards */
+    /* ── CARDS ── */
     .cards{
       display:grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 14px;
     }
     .card{
-      background: #fff;
+      background: var(--card);
       border: 1px solid var(--line);
       border-radius: var(--radius);
-      padding: 16px;
-      box-shadow: 0 0 0 rgba(0,0,0,0);
-      transition: box-shadow .15s ease, transform .05s ease;
+      padding: 20px;
+      transition: box-shadow .15s ease, border-color .15s ease, transform .05s ease;
     }
-    .card:hover{ box-shadow: var(--shadow); text-decoration:none; }
+    .card:hover{ box-shadow: var(--shadow); border-color: rgba(45,168,216,.2); text-decoration:none; }
     .card:active{ transform: translateY(1px); }
-    .card h3{ margin:0 0 6px; font-size: 16px; }
-    .card p{ margin:0; color: var(--muted); font-size: 14px; }
-    .tagrow{ margin-top: 10px; display:flex; flex-wrap: wrap; gap: 8px; }
+    .card h3{ margin:0 0 8px; font-size: 16px; font-weight: 600; color: var(--text); }
+    .card p{ margin:0; color: var(--text2); font-size: 14px; font-weight: 300; }
+    .tagrow{ margin-top: 12px; display:flex; flex-wrap: wrap; gap: 8px; }
     .tag{
       font-size: 12px;
       color: var(--muted);
       border: 1px solid var(--line);
       border-radius: 999px;
-      padding: 5px 9px;
-      background: #fff;
+      padding: 4px 10px;
+      background: var(--bg2);
     }
 
-    /* Audience cards with image */
-    .card-media{
-      padding: 0;
-      overflow: hidden;
-    }
+    /* Media cards */
+    .card-media{ padding: 0; overflow: hidden; }
     .card-media .card-img{
       height: 170px;
       border-bottom: 1px solid var(--line);
-      background: var(--card);
+      background: var(--bg3);
     }
-    .card-media .card-img img{
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display:block;
-    }
-    .card-media .card-body{
-      padding: 16px;
-    }
+    .card-media .card-img img{ width:100%; height:100%; object-fit:cover; display:block; }
+    .card-media .card-body{ padding: 18px; }
 
-    /* Accordion */
+    /* ── ACCORDION ── */
     .accordion{
       border: 1px solid var(--line);
       border-radius: var(--radius);
       overflow: hidden;
-      background: #fff;
+      background: var(--card);
     }
     .acc-item + .acc-item{ border-top: 1px solid var(--line); }
     .acc-btn{
@@ -301,99 +336,109 @@
       align-items:center;
       justify-content: space-between;
       gap: 14px;
-      padding: 16px 16px;
-      background: #fff;
+      padding: 18px 18px;
+      background: transparent;
       border: 0;
       cursor:pointer;
-      font-weight: 700;
-      font-size: 15px;
-    }
-    .acc-btn:hover{ background: #f9fafb; }
-    .acc-meta{
       font-weight: 600;
+      font-size: 15px;
+      color: var(--text);
+      font-family: var(--font-body);
+      transition: background .12s;
+    }
+    .acc-btn:hover{ background: var(--card2); }
+    .acc-item[aria-expanded="true"] .acc-btn{ background: var(--card2); }
+    .acc-meta{
+      font-weight: 400;
       color: var(--muted);
       font-size: 13px;
       margin-left: 8px;
     }
-
-    /* Accordion thumb */
-    .acc-left{
-      display:flex;
-      align-items:center;
-      gap: 12px;
-    }
+    .acc-left{ display:flex; align-items:center; gap: 14px; }
     .acc-thumb{
-      width: 48px;
-      height: 36px;
-      border-radius: 12px;
+      width: 48px; height: 36px;
+      border-radius: 10px;
       object-fit: cover;
       border: 1px solid var(--line);
-      background: #fff;
+      background: var(--bg3);
       flex: none;
-      display:block;
     }
-
     .chev{
       width: 22px; height: 22px; flex: none;
-      border-radius: 10px;
+      border-radius: 8px;
       display:grid; place-items:center;
       border: 1px solid var(--line);
-      background: #fff;
-      transition: transform .15s ease;
-    }
-    .acc-item[aria-expanded="true"] .chev{ transform: rotate(180deg); }
-    .acc-panel{
-      padding: 0 16px 16px;
+      background: var(--bg3);
       color: var(--muted);
+      font-size: 12px;
+      transition: transform .15s ease, background .12s;
+    }
+    .acc-item[aria-expanded="true"] .chev{ transform: rotate(180deg); background: var(--accent); border-color: var(--accent); color:#fff; }
+    .acc-panel{
+      padding: 0 18px 18px;
+      color: var(--text2);
       font-size: 14px;
+      font-weight: 300;
       display: none;
     }
     .acc-item[aria-expanded="true"] .acc-panel{ display: block; }
+    .acc-panel p{ margin-top: 12px; }
     .acc-panel .cols{
       display:grid;
-      grid-template-columns: 1.1fr .9fr;
+      grid-template-columns: 1fr 1fr;
       gap: 14px;
-      margin-top: 10px;
+      margin-top: 12px;
     }
     .acc-panel .box{
       border: 1px solid var(--line);
       border-radius: var(--radius2);
-      padding: 12px;
-      background: #fff;
+      padding: 14px;
+      background: var(--bg2);
     }
     .acc-panel .box strong{
       display:block;
       color: var(--text);
-      margin-bottom: 6px;
+      margin-bottom: 8px;
       font-size: 13px;
+      font-weight: 600;
       letter-spacing: .2px;
     }
     .acc-panel ul{ margin:0; padding-left: 18px; }
-    .acc-panel li{ margin: 6px 0; }
+    .acc-panel li{ margin: 7px 0; }
 
-    /* CTA band */
+    /* ── CTA BAND ── */
     .band{
-      background: #0b1222;
-      color: #fff;
+      background: linear-gradient(135deg, #0e2a45 0%, #112d4e 100%);
+      border: 1px solid rgba(45,168,216,.2);
+      color: var(--text);
       border-radius: var(--radius);
-      padding: 18px;
+      padding: 22px;
       display:flex;
       align-items:center;
       justify-content: space-between;
       gap: 16px;
       flex-wrap: wrap;
     }
-    .band p{ margin: 0; opacity: .9; }
-    .band .btn{ border-color: rgba(255,255,255,.22); }
-    .band .btn.primary{ background: #fff; color: #0b1222; border-color: #fff; }
-    .band .btn.primary:hover{ background: #f3f4f6; }
+    .band p{ margin: 0; opacity: .85; font-weight: 300; color: var(--text2); }
+    .band strong{ font-size: 16px; color: var(--text); }
 
-    /* Footer */
+    /* ── ÜBER MICH Highlight Box ── */
+    .highlight-box{
+      background: var(--bg2);
+      border: 1px solid rgba(45,168,216,.15);
+      border-radius: var(--radius);
+      padding: 20px;
+    }
+    .highlight-box h3{ margin: 0 0 10px; font-size: 15px; font-weight: 600; color: var(--accent); }
+    .highlight-box p{ margin:0; font-size: 14px; color: var(--text2); font-weight: 300; }
+
+    /* ── FOOTER ── */
     footer{
       border-top: 1px solid var(--line);
-      padding: 22px 0;
+      padding: 24px 0;
       color: var(--muted);
       font-size: 13px;
+      background: var(--bg);
     }
     .footer-grid{
       display:flex;
@@ -402,65 +447,60 @@
       flex-wrap: wrap;
       align-items: center;
     }
-    .footer-links{
-      display:flex;
-      gap: 14px;
-      flex-wrap: wrap;
+    .footer-links{ display:flex; gap: 16px; flex-wrap: wrap; }
+    .footer-links a{ color: var(--muted); transition: color .12s; }
+    .footer-links a:hover{ color: var(--text); text-decoration:none; }
+
+    /* ── FORM INPUTS ── */
+    input, textarea{
+      background: var(--bg2);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-family: var(--font-body);
+    }
+    input::placeholder, textarea::placeholder{ color: var(--muted); }
+    input:focus, textarea:focus{
+      outline: none;
+      border-color: var(--accent);
     }
 
-    /* Responsive */
-    @media (max-width: 1100px){
-      nav a{ font-size: 13px; padding: 7px 9px; }
-      .nav-links{ gap: 10px; }
+    /* ── DIVIDER ── */
+    .divider{
+      height: 1px;
+      background: var(--line);
+      margin: 0;
     }
 
+    /* ── RESPONSIVE ── */
     @media (max-width: 920px){
       .hero-grid{ grid-template-columns: 1fr; }
       .hero-bullets{ grid-template-columns: 1fr; }
       .cards{ grid-template-columns: 1fr; }
       .acc-panel .cols{ grid-template-columns: 1fr; }
     }
-
-    /* MOBILE HEADER: alles sichtbar ohne Scroll (zweizeilig) */
     @media (max-width: 720px){
       .container{ width: min(var(--max), calc(100% - 24px)); }
-
       .nav{
-        grid-template-columns: 1fr auto;  /* Brand links, Button rechts */
-        grid-template-areas:
-          "brand cta"
-          "menu  menu";
+        grid-template-columns: 1fr auto;
+        grid-template-areas: "brand cta" "menu  menu";
         gap: 10px;
         padding: 10px 0;
       }
-
       .brand{ grid-area: brand; min-width: 0; }
       .nav-cta{ grid-area: cta; }
       nav{ grid-area: menu; }
-
-      /* auf Handy: zweite Zeile im Brand-Text ausblenden */
       .brand-text span{ display:none; }
       .brand-logo{ width: 40px; height: 40px; }
-
-      /* Menü: komplett sichtbar, darf umbrechen */
       .nav-links{
         overflow-x: visible;
         white-space: normal;
         flex-wrap: wrap;
         justify-content: flex-start;
-        gap: 8px;
+        gap: 6px;
       }
-
-      .nav-links a{
-        font-size: 13px;
-        padding: 7px 9px;
-      }
-
-      .btn.small{
-        padding: 8px 10px;
-        font-size: 13px;
-        border-radius: 10px;
-      }
+      nav a{ font-size: 13px; padding: 7px 9px; }
+      .btn.small{ padding: 8px 10px; font-size: 13px; }
+      h1{ font-size: clamp(24px, 7vw, 34px); }
     }
   </style>
 </head>
@@ -475,7 +515,7 @@
           </span>
           <span class="brand-text">
             <strong>Büroservice & Kanzlei-Schulung</strong>
-            <span>Effiziente Prozesse • KI-gestützt • praxisnah</span>
+            <span>Kanzleiunterstützung • remote • zuverlässig</span>
           </span>
         </a>
 
@@ -498,26 +538,24 @@
   </header>
 
   <main id="top">
-    <!-- HERO -->
+
+    <!-- ── HERO ── -->
     <section class="hero">
       <div class="container">
         <div class="hero-grid">
           <div>
-            <div class="kicker" aria-label="Kurzinfo">
-              <span>Remote</span> • <span>klar strukturiert</span> • <span>mit Verantwortung</span>
-            </div>
+            <div class="kicker">Remote &nbsp;·&nbsp; klar strukturiert &nbsp;·&nbsp; mit Verantwortung</div>
 
-            <h1>Effiziente Prozesse für Kanzleien & Unternehmen – mit KI, Tools & tatkräftiger Unterstützung</h1>
+            <h1>Professionelle Unterstützung für <em>Kanzleien</em> & Unternehmen</h1>
 
             <p class="lead">
-              Ich unterstütze beim Aufbau sicherer Workflows, der Strukturierung von Dokumenten und der Qualitätssicherung von KI-Ergebnissen.
-              Ziel: spürbare Entlastung im Alltag – ohne Theorie-Overload.
+              Ich entlaste Sie bei der Mandatsbearbeitung, Schriftsatzerstellung, Korrespondenz und Prozessoptimierung – zuverlässig, vertraulich und ausschließlich remote.
             </p>
 
             <div class="hero-actions">
               <a class="btn primary" href="#kontakt">Termin anfragen</a>
               <a class="btn" href="#leistungen">Leistungen ansehen</a>
-              <a class="btn" href="#arbeitsweise">So arbeite ich</a>
+              <a class="btn ghost" href="#arbeitsweise">So arbeite ich</a>
             </div>
 
             <div class="hero-bullets" aria-label="Vorteile">
@@ -531,53 +569,54 @@
           <aside class="hero-card" aria-label="Kurzüberblick">
             <h3>Kurzüberblick</h3>
             <ul>
-              <li><strong>KI-Einführung:</strong> Prompts, Vorlagen, Headnotes & Prozessregeln</li>
-              <li><strong>Dokumentenarbeit:</strong> Struktur, Fristen, Aufbereitung, Ablage</li>
-              <li><strong>Qualitätssicherung:</strong> Human-in-the-Loop statt Blindflug</li>
-              <li><strong>Backoffice:</strong> Unterstützung & Entlastung nach Absprache</li>
+              <li><strong>Schriftsatz:</strong> Erstellung & Aufbereitung von Schriftsätzen nach Vorgabe</li>
+              <li><strong>Korrespondenz:</strong> Gerichte, Mandanten, Rechtsschutzversicherungen</li>
+              <li><strong>Forderungsmanagement:</strong> Mahnverfahren & Zwangsvollstreckung</li>
+              <li><strong>Dokumentenstruktur:</strong> Ablage, Fristen, Prozesse, Ordnung</li>
+              <li><strong>Prozessoptimierung:</strong> Arbeitsabläufe strukturieren & vereinfachen</li>
             </ul>
           </aside>
         </div>
       </div>
     </section>
 
-    <!-- ZIELGRUPPEN -->
+    <!-- ── ZIELGRUPPEN ── -->
     <section>
       <div class="container">
         <div class="section-title">
           <h2>Wählen Sie den passenden Einstieg</h2>
-          <p>Damit Sie nicht suchen müssen: gleicher Anspruch, aber zielgruppengerechte Sprache und Beispiele.</p>
+          <p>Gleicher Anspruch, zielgruppengerechte Unterstützung – für Kanzleien und Unternehmen.</p>
         </div>
 
         <div class="cards">
           <a id="fuer-kanzleien" class="card card-media" href="#kontakt" data-prefill="kanzlei">
             <div class="card-img">
-              <img src="kanzlei.png" alt="">
+              <img src="kanzlei.png" alt="Kanzlei">
             </div>
             <div class="card-body">
               <h3>Für Kanzleien</h3>
-              <p>Workflows, Schriftsatz- und Kommunikationsprozesse, sichere KI-Nutzung, Qualitätssicherung – sauber und praxistauglich.</p>
-              <div class="tagrow" aria-label="Tags">
+              <p>Schriftsatzerstellung, Korrespondenz mit Gerichten und Mandanten, Kostenfestsetzung, Mahnverfahren, Zwangsvollstreckung – sauber und praxistauglich.</p>
+              <div class="tagrow">
+                <span class="tag">Schriftsätze</span>
                 <span class="tag">Fristen & Wiedervorlage</span>
-                <span class="tag">Vorlagen</span>
-                <span class="tag">Qualitätscheck</span>
-                <span class="tag">KI-Regeln</span>
+                <span class="tag">Korrespondenz</span>
+                <span class="tag">Kostenfestsetzung</span>
               </div>
             </div>
           </a>
 
           <a id="fuer-unternehmen" class="card card-media" href="#kontakt" data-prefill="unternehmen">
             <div class="card-img">
-              <img src="unternehmen.png" alt="">
+              <img src="unternehmen.png" alt="Unternehmen">
             </div>
             <div class="card-body">
               <h3>Für Unternehmen</h3>
-              <p>Backoffice-Entlastung, Dokumentenstruktur, Automatisierung wiederkehrender Aufgaben und klare Standards für KI im Alltag.</p>
-              <div class="tagrow" aria-label="Tags">
+              <p>Backoffice-Entlastung, Dokumentenstruktur, Optimierung von Arbeitsabläufen und klare Prozesse für wiederkehrende Aufgaben.</p>
+              <div class="tagrow">
                 <span class="tag">Backoffice</span>
                 <span class="tag">Dokumente</span>
-                <span class="tag">Automatisierung</span>
-                <span class="tag">Enablement</span>
+                <span class="tag">Prozessoptimierung</span>
+                <span class="tag">Ablage & Ordnung</span>
               </div>
             </div>
           </a>
@@ -585,51 +624,124 @@
       </div>
     </section>
 
-    <!-- LEISTUNGEN + ACCORDION -->
+    <div class="divider"></div>
+
+    <!-- ── LEISTUNGEN ── -->
     <section id="leistungen">
       <div class="container">
         <div class="section-title">
           <h2>Leistungen</h2>
-          <p>Klicken Sie auf die Unterkategorie – der jeweilige Text klappt darunter auf. Modular buchbar, einzeln oder kombiniert.</p>
+          <p>Klicken Sie auf eine Leistung – der Text klappt darunter auf. Modular buchbar, einzeln oder kombiniert.</p>
         </div>
 
         <div class="accordion" role="region" aria-label="Leistungsübersicht">
-          <!-- 1 -->
+
+          <!-- 1: Schriftsatz & Korrespondenz -->
           <div class="acc-item" aria-expanded="true">
             <button class="acc-btn" type="button">
               <span class="acc-left">
-                <img class="acc-thumb" src="ki-workflow.png" alt="">
-                <span>KI & Workflow-Optimierung <span class="acc-meta">Einführung & sichere Nutzung</span></span>
+                <img class="acc-thumb" src="dokumente.png" alt="">
+                <span>Schriftsatzerstellung & Korrespondenz <span class="acc-meta">Kanzleikommunikation nach Maß</span></span>
               </span>
               <span class="chev" aria-hidden="true">▾</span>
             </button>
             <div class="acc-panel">
               <p>
-                Ich unterstütze bei der strukturierten Einführung von KI in bestehende Abläufe – mit klaren Regeln, praxistauglichen Vorlagen und verständlicher Dokumentation.
-                Ziel ist Entlastung, nicht Technik um der Technik willen.
+                Ich erstelle und bereite Schriftsätze nach Ihren Vorgaben auf – von einfachen Anschreiben bis hin zu strukturierten Schriftsätzen für Gerichte. Korrespondenz mit Mandanten, Rechtsschutzversicherungen und Behörden gehört ebenso dazu.
               </p>
               <div class="cols">
                 <div class="box">
                   <strong>Typische Aufgaben</strong>
                   <ul>
-                    <li>Prompt- und Vorlagen-Setups für wiederkehrende Texte</li>
-                    <li>Prozessregeln („Do/Don’t“) & sichere Nutzung im Alltag</li>
-                    <li>Einführung einfacher Workflows (z. B. E-Mail → Entwurf)</li>
+                    <li>Schriftsätze nach Diktat oder Stichworten</li>
+                    <li>Korrespondenz mit Gerichten & Behörden</li>
+                    <li>Schreiben an Mandanten & Rechtsschutzversicherungen</li>
+                    <li>Bearbeitung von Monierungen</li>
                   </ul>
                 </div>
                 <div class="box">
                   <strong>Ergebnis</strong>
                   <ul>
-                    <li>funktionierender Ablauf</li>
-                    <li>Dokumentation & Übergabe</li>
-                    <li>optional: Nachbetreuung</li>
+                    <li>Versandfertige Dokumente</li>
+                    <li>Einheitliche Sprache & Struktur</li>
+                    <li>Zeitersparnis für das Kernteam</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 2 -->
+          <!-- 2: Kostenfestsetzung & Rechnungen -->
+          <div class="acc-item" aria-expanded="false">
+            <button class="acc-btn" type="button">
+              <span class="acc-left">
+                <img class="acc-thumb" src="Qualitaet.png" alt="">
+                <span>Kostenfestsetzung & Rechnungsbearbeitung <span class="acc-meta">Monierungen, KfA, Abrechnungen</span></span>
+              </span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                Ich unterstütze bei der Bearbeitung von Kostenfestsetzungsanträgen, der Bearbeitung von Monierungen sowie der Vorbereitung und Aufbereitung von Rechnungen und Abrechnungsunterlagen.
+              </p>
+              <div class="cols">
+                <div class="box">
+                  <strong>Typische Aufgaben</strong>
+                  <ul>
+                    <li>Bearbeitung von Monierungen zu KfA</li>
+                    <li>Vorbereitung von Kostenfestsetzungsanträgen</li>
+                    <li>Aufbereitung von Rechnungen & Belegen</li>
+                    <li>Kommunikation mit Rechtschutzversicherungen</li>
+                  </ul>
+                </div>
+                <div class="box">
+                  <strong>Rahmen</strong>
+                  <ul>
+                    <li>Nach Vorgabe & Rücksprache</li>
+                    <li>Vertraulich & strukturiert</li>
+                    <li>Remote (Standard)</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3: Forderungsmanagement -->
+          <div class="acc-item" aria-expanded="false">
+            <button class="acc-btn" type="button">
+              <span class="acc-left">
+                <img class="acc-thumb" src="backoffice.png" alt="">
+                <span>Forderungsmanagement & Zwangsvollstreckung <span class="acc-meta">Mahnverfahren, ZV, Vollstreckung</span></span>
+              </span>
+              <span class="chev" aria-hidden="true">▾</span>
+            </button>
+            <div class="acc-panel">
+              <p>
+                Ich unterstütze bei der Bearbeitung von Mahnverfahren und Zwangsvollstreckungsmaßnahmen – von der Antragsvorbereitung bis zur Kommunikation mit Gerichtsvollziehern und Gerichten.
+              </p>
+              <div class="cols">
+                <div class="box">
+                  <strong>Typische Aufgaben</strong>
+                  <ul>
+                    <li>Vorbereitung von Mahnbescheiden</li>
+                    <li>Vollstreckungsaufträge & Anträge</li>
+                    <li>Kommunikation mit Gerichtsvollziehern</li>
+                    <li>Überwachung offener Forderungen</li>
+                  </ul>
+                </div>
+                <div class="box">
+                  <strong>Geeignet für</strong>
+                  <ul>
+                    <li>Kanzleien mit hohem Vollstreckungsaufkommen</li>
+                    <li>Wiederkehrende Standardfälle</li>
+                    <li>Entlastung bei Routine-ZV</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4: Dokumentenstruktur -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
               <span class="acc-left">
@@ -640,7 +752,7 @@
             </button>
             <div class="acc-panel">
               <p>
-                Wenn Dokumente, Ablagen oder Abläufe „gewachsen“ sind, kostet das jeden Tag Zeit. Ich helfe dabei, Struktur herzustellen – nachvollziehbar, praktikabel und wartbar.
+                Wenn Dokumente, Ablagen oder Abläufe „gewachsen" sind, kostet das jeden Tag Zeit. Ich helfe dabei, Struktur herzustellen – nachvollziehbar, praktikabel und wartbar.
               </p>
               <div class="cols">
                 <div class="box">
@@ -663,41 +775,41 @@
             </div>
           </div>
 
-          <!-- 3 -->
+          <!-- 5: Prozessoptimierung -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
               <span class="acc-left">
-                <img class="acc-thumb" src="Qualitaet.png" alt="">
-                <span>Qualitätssicherung & Human-in-the-Loop <span class="acc-meta">Prüfen statt Blindflug</span></span>
+                <img class="acc-thumb" src="ki-workflow.png" alt="">
+                <span>Prozessoptimierung & Arbeitsabläufe <span class="acc-meta">Effizienz, Struktur, Entlastung</span></span>
               </span>
               <span class="chev" aria-hidden="true">▾</span>
             </button>
             <div class="acc-panel">
               <p>
-                KI kann schnell sein – aber nicht automatisch richtig. Ich prüfe Ergebnisse, sichere Standards ab und sorge dafür, dass Inhalte nachvollziehbar und verantwortbar bleiben.
+                Ich analysiere bestehende Abläufe und helfe dabei, sie schlanker und nachvollziehbarer zu gestalten. Auch der sinnvolle Einsatz digitaler Tools – einschließlich KI-Tools, wo sinnvoll – kann dabei Teil des Prozesses sein.
               </p>
               <div class="cols">
                 <div class="box">
                   <strong>Typische Aufgaben</strong>
                   <ul>
-                    <li>Prüfung von KI-Texten auf Logik, Struktur, Vollständigkeit</li>
-                    <li>Definition von Qualitätsstandards & Freigabeprozessen</li>
-                    <li>Feedbackschleifen zur Verbesserung der Ergebnisse</li>
+                    <li>Analyse & Dokumentation bestehender Abläufe</li>
+                    <li>Vorlagen & Standards für wiederkehrende Vorgänge</li>
+                    <li>Einbindung sinnvoller digitaler Hilfsmittel</li>
                   </ul>
                 </div>
                 <div class="box">
-                  <strong>Mehrwert</strong>
+                  <strong>Ergebnis</strong>
                   <ul>
-                    <li>weniger Fehler</li>
-                    <li>weniger Risiko</li>
-                    <li>mehr Verlässlichkeit</li>
+                    <li>Schlankere, nachvollziehbare Prozesse</li>
+                    <li>Dokumentation & Übergabe</li>
+                    <li>Optional: Nachbetreuung</li>
                   </ul>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- 4 -->
+          <!-- 6: Backoffice -->
           <div class="acc-item" aria-expanded="false">
             <button class="acc-btn" type="button">
               <span class="acc-left">
@@ -722,43 +834,9 @@
                 <div class="box">
                   <strong>Rahmen</strong>
                   <ul>
-                    <li>projektbasiert oder Paket</li>
-                    <li>remote (Standard)</li>
+                    <li>Projektbasiert oder Paket</li>
+                    <li>Remote (Standard)</li>
                     <li>Vertraulichkeit & klare Prozesse</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 5 -->
-          <div class="acc-item" aria-expanded="false">
-            <button class="acc-btn" type="button">
-              <span class="acc-left">
-                <img class="acc-thumb" src="Schulung.png" alt="">
-                <span>Schulungen & Enablement <span class="acc-meta">praxisnah, ohne Überforderung</span></span>
-              </span>
-              <span class="chev" aria-hidden="true">▾</span>
-            </button>
-            <div class="acc-panel">
-              <p>
-                Kurze, praxistaugliche Schulungen zur sicheren Nutzung von KI und Tools. Kein Frontalunterricht, sondern direkt am Arbeitsalltag orientiert.
-              </p>
-              <div class="cols">
-                <div class="box">
-                  <strong>Formate</strong>
-                  <ul>
-                    <li>Einzelperson oder kleines Team</li>
-                    <li>Online (Standard)</li>
-                    <li>Follow-up / Sprechstunde möglich</li>
-                  </ul>
-                </div>
-                <div class="box">
-                  <strong>Inhalte (Auszug)</strong>
-                  <ul>
-                    <li>Prompts, Vorlagen, Standards</li>
-                    <li>Datenschutz & sichere Nutzung</li>
-                    <li>Qualitätssicherung im Alltag</li>
                   </ul>
                 </div>
               </div>
@@ -767,10 +845,10 @@
 
         </div>
 
-        <div style="margin-top:16px;">
+        <div style="margin-top:20px;">
           <div class="band" id="arbeitsweise">
             <div class="stack" style="gap:6px;">
-              <strong style="font-size:16px;">Arbeitsweise: klar, modular, nachvollziehbar</strong>
+              <strong>Arbeitsweise: klar, modular, nachvollziehbar</strong>
               <p>Kurzer Abgleich → Zieldefinition → Umsetzung → Dokumentation/Übergabe. Auf Wunsch mit Nachbetreuung.</p>
             </div>
             <div style="display:flex; gap:10px; flex-wrap:wrap;">
@@ -782,7 +860,9 @@
       </div>
     </section>
 
-    <!-- ÜBER MICH -->
+    <div class="divider"></div>
+
+    <!-- ── ÜBER MICH ── -->
     <section id="ueber-mich">
       <div class="container">
         <div class="section-title">
@@ -794,18 +874,14 @@
           <div class="card">
             <h3>Mein Hintergrund</h3>
             <p>
-              Ich bin ausgebildete Rechtsanwaltsfachangestellte mit langjähriger Erfahrung in der Kanzleipraxis.
-              Neben meiner praktischen Tätigkeit habe ich mich kontinuierlich weitergebildet, u. a. als Fachreferentin für RVG sowie in den Bereichen Social Media Management, KI, Data Science und Machine Learning. Derzeit erweitere ich 
-              mein Profil zudem im IT-nahen Bereich mit Blick auf fachinformatische Themen.
-              Auf dieser Basis unterstütze ich heute Kanzleien und Unternehmen ausschließlich remote bei der Strukturierung von Prozessen und Dokumenten sowie bei der verantwortungsvollen, qualitätsgesicherten Nutzung von KI im Arbeitsalltag.
-              Mein Anspruch: nachvollziehbare Abläufe statt theoretischer Konzepte.
+              Ich bin ausgebildete Rechtsanwaltsfachangestellte mit langjähriger Erfahrung in der Kanzleipraxis. Neben meiner praktischen Tätigkeit habe ich mich kontinuierlich weitergebildet, u. a. als Fachreferentin für RVG sowie in weiteren kanzleirelevanten Bereichen. Auf dieser Basis unterstütze ich heute Kanzleien und Unternehmen ausschließlich remote bei der Mandatsbearbeitung, Schriftsatzerstellung und Strukturierung von Prozessen. Mein Anspruch: nachvollziehbare Abläufe statt theoretischer Konzepte.
             </p>
             <div class="tagrow">
               <span class="tag">Kanzleipraxis</span>
               <span class="tag">RVG</span>
-              <span class="tag">KI-Workflows</span>
+              <span class="tag">Schriftsätze</span>
               <span class="tag">Dokumentenstruktur</span>
-              <span class="tag">Qualitätssicherung</span>
+              <span class="tag">Zwangsvollstreckung</span>
               <span class="tag">100% remote</span>
             </div>
           </div>
@@ -813,12 +889,11 @@
           <div class="card">
             <h3>Wichtiger Hinweis</h3>
             <p>
-              Meine Leistungen sind organisatorisch/unterstützend. Es erfolgt keine Rechtsberatung.
-              Inhalte werden stets so aufbereitet, dass interne Prozesse sicher und verständlich bleiben.
+              Meine Leistungen sind organisatorisch und unterstützend. Es erfolgt keine Rechtsberatung und keine Außenvertretung. Inhalte werden stets so aufbereitet, dass interne Prozesse sicher und verständlich bleiben.
             </p>
             <div class="tagrow">
-              <span class="tag">Abgrenzung</span>
-              <span class="tag">Sauberer Rahmen</span>
+              <span class="tag">Keine Rechtsberatung</span>
+              <span class="tag">Klare Abgrenzung</span>
               <span class="tag">Verlässlichkeit</span>
             </div>
           </div>
@@ -826,7 +901,9 @@
       </div>
     </section>
 
-    <!-- KONTAKT -->
+    <div class="divider"></div>
+
+    <!-- ── KONTAKT ── -->
     <section id="kontakt">
       <div class="container">
         <div class="section-title">
@@ -838,24 +915,23 @@
           <div class="card">
             <h3>E-Mail</h3>
             <p style="margin-bottom:10px;">
-              <a href="mailto:wichmann.kathleen@gmx.de">wichmann.kathleen@gmx.de</a>
+              <a href="mailto:wichmann.kathleen@gmx.de" style="color:var(--accent);">wichmann.kathleen@gmx.de</a>
             </p>
           </div>
 
           <div class="card">
             <h3>Kurze Anfrage</h3>
-            <!-- Simple mailto fallback, funktioniert ohne Backend -->
             <form id="contactForm">
-              <div style="display:grid; gap:10px;">
+              <div style="display:grid; gap:12px;">
                 <label>
                   <span style="display:block;font-size:13px;color:var(--muted);margin-bottom:6px;">Thema</span>
-                  <input id="topic" type="text" required
-                    style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;font-size:14px;" />
+                  <input id="topic" type="text" required placeholder="z. B. Schriftsatzerstellung, Forderungsmanagement …"
+                    style="width:100%;padding:11px 14px;border-radius:12px;font-size:14px;" />
                 </label>
                 <label>
                   <span style="display:block;font-size:13px;color:var(--muted);margin-bottom:6px;">Kurzbeschreibung</span>
-                  <textarea id="msg" rows="5" required
-                    style="width:100%;padding:11px 12px;border:1px solid var(--line);border-radius:12px;font-size:14px;resize:vertical;"></textarea>
+                  <textarea id="msg" rows="5" required placeholder="Was brauchen Sie, in welchem Umfang ungefähr?"
+                    style="width:100%;padding:11px 14px;border-radius:12px;font-size:14px;resize:vertical;"></textarea>
                 </label>
                 <button class="btn primary" type="submit">E-Mail vorbereiten</button>
                 <p style="margin:0;color:var(--muted);font-size:12px;">
@@ -867,6 +943,7 @@
         </div>
       </div>
     </section>
+
   </main>
 
   <footer>
@@ -883,23 +960,18 @@
   </footer>
 
   <script>
-    // Year
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Accordion logic (single open at a time)
     const items = Array.from(document.querySelectorAll(".acc-item"));
     items.forEach((item) => {
       const btn = item.querySelector(".acc-btn");
       btn.addEventListener("click", () => {
         const isOpen = item.getAttribute("aria-expanded") === "true";
-        // close all
         items.forEach(i => i.setAttribute("aria-expanded", "false"));
-        // open clicked if it was closed
         item.setAttribute("aria-expanded", isOpen ? "false" : "true");
       });
     });
 
-    // Optional: Preselect topic based on audience card
     document.querySelectorAll("[data-prefill]").forEach((el) => {
       el.addEventListener("click", () => {
         const val = el.getAttribute("data-prefill");
@@ -910,7 +982,6 @@
       });
     });
 
-    // Mailto form
     document.getElementById("contactForm").addEventListener("submit", (e) => {
       e.preventDefault();
       const to = "wichmann.kathleen@gmx.de";
